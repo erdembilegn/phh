@@ -1,0 +1,21 @@
+{
+  "entryFile": "./src/Application.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/controllers/*.controller.ts"],
+  "routes": {
+    "basePath": "/spa-template",
+    "routesDir": "./src",
+    "middleware": "express",
+    "routesFileName": "tsoa-routes.ts"
+  },
+  "spec": {
+    "outputDirectory": "./spec",
+    "host": "localhost:8000",
+    "basePath": "/spa-template",
+    "specVersion": 3,
+    "schemes": ["http"]
+  },
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}
