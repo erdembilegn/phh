@@ -6,8 +6,8 @@ import { RestCreateUser, RestGetUser } from '../interfaces/user/rest.interface';
 @Route('/user')
 export class UserController extends Controller{
     @Post('/create')
-    @Tags('GetAllUsers')
-    public async getAllUser(@Body() req: RestCreateUser) : Promise<ResponseCreateUser> {
+    @Tags('CreateUser')
+    public async createUser(@Body() req: RestCreateUser) : Promise<ResponseCreateUser> {
         return new UserService().CreateUser(req);
     }
 
@@ -16,4 +16,4 @@ export class UserController extends Controller{
     public async getUserById(@Queries() req: RestGetUser) : Promise<ResponseGetUser>{
         return new UserService().GetUser(req);
     }
-}
+ }

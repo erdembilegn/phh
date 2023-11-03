@@ -3,6 +3,8 @@
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { Controller, ValidationService, FieldErrors, ValidateError, TsoaRoute, HttpStatusCodeLiteral, TsoaResponse, fetchMiddlewares } from '@tsoa/runtime';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { AwardController } from './controllers/Award.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { UserController } from './controllers/User.controller';
 import type { RequestHandler, Router } from 'express';
 
@@ -13,6 +15,53 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "message": {"dataType":"string","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "ResponseCreateAward": {
+        "dataType": "refObject",
+        "properties": {
+            "error": {"ref":"GenericError"},
+            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"awardId":{"dataType":"string","required":true}}},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Assessment": {
+        "dataType": "refObject",
+        "properties": {
+            "assessmentName": {"dataType":"string","required":true},
+            "assessmantMin": {"dataType":"double","required":true},
+            "assessmentMax": {"dataType":"double","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "RestCreateAward": {
+        "dataType": "refObject",
+        "properties": {
+            "awardId": {"dataType":"string","required":true},
+            "awardName": {"dataType":"string","required":true},
+            "awardPicture": {"dataType":"string","required":true},
+            "assessment": {"dataType":"array","array":{"dataType":"refObject","ref":"Assessment"},"required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "ResponseGetAward": {
+        "dataType": "refObject",
+        "properties": {
+            "error": {"ref":"GenericError"},
+            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"awardPicture":{"dataType":"string","required":true},"awardName":{"dataType":"string","required":true},"awardId":{"dataType":"string","required":true}}},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "RestGetAward": {
+        "dataType": "refObject",
+        "properties": {
+            "awardId": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -33,6 +82,8 @@ const models: TsoaRoute.Models = {
             "lastName": {"dataType":"string","required":true},
             "email": {"dataType":"string","required":true},
             "password": {"dataType":"string","required":true},
+            "role": {"dataType":"string","required":true},
+            "groupId": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -41,7 +92,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "error": {"ref":"GenericError"},
-            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"email":{"dataType":"string","required":true},"lastName":{"dataType":"string","required":true},"firstName":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}},
+            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"groupId":{"dataType":"string","required":true},"role":{"dataType":"string","required":true},"email":{"dataType":"string","required":true},"lastName":{"dataType":"string","required":true},"firstName":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}},
         },
         "additionalProperties": false,
     },
@@ -65,11 +116,61 @@ export function RegisterRoutes(app: Router) {
     //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
+        app.post('/spa-template/award/create',
+            ...(fetchMiddlewares<RequestHandler>(AwardController)),
+            ...(fetchMiddlewares<RequestHandler>(AwardController.prototype.createAward)),
+
+            function AwardController_createAward(request: any, response: any, next: any) {
+            const args = {
+                    req: {"in":"body","name":"req","required":true,"ref":"RestCreateAward"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new AwardController();
+
+
+              const promise = controller.createAward.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.get('/spa-template/award/get',
+            ...(fetchMiddlewares<RequestHandler>(AwardController)),
+            ...(fetchMiddlewares<RequestHandler>(AwardController.prototype.getUserAwardId)),
+
+            function AwardController_getUserAwardId(request: any, response: any, next: any) {
+            const args = {
+                    req: {"in":"queries","name":"req","required":true,"ref":"RestGetAward"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new AwardController();
+
+
+              const promise = controller.getUserAwardId.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.post('/spa-template/user/create',
             ...(fetchMiddlewares<RequestHandler>(UserController)),
-            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.getAllUser)),
+            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.createUser)),
 
-            function UserController_getAllUser(request: any, response: any, next: any) {
+            function UserController_createUser(request: any, response: any, next: any) {
             const args = {
                     req: {"in":"body","name":"req","required":true,"ref":"RestCreateUser"},
             };
@@ -83,7 +184,7 @@ export function RegisterRoutes(app: Router) {
                 const controller = new UserController();
 
 
-              const promise = controller.getAllUser.apply(controller, validatedArgs as any);
+              const promise = controller.createUser.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

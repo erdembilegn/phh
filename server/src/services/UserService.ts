@@ -3,20 +3,23 @@ import { RestCreateUser, RestGetUser } from "../interfaces/user/rest.interface";
 import { PrismaClient } from "@prisma/client";
 import { encryptPassword, verifyPassword } from "../utils";
 import logger from 'morgan';
+import { group } from "console";
 
+const prisma = new PrismaClient().user
 export class UserService {
 
-    private userRepository = new PrismaClient().user
 
     public async CreateUser(req: RestCreateUser) : Promise<ResponseCreateUser> {
         try {
             const password = encryptPassword(req.password)
-            const user = await this.userRepository.create({
+            const user = await prisma.create({
                 data: {
                     email: req.email,
                     firstName: req.firstName,
                     lastName: req.lastName,
-                    password
+                    password,
+                    role: req.role,
+                    groupId : req.groupId
                 }
             })
 
@@ -24,7 +27,7 @@ export class UserService {
                 message: 'User not created'
             }}
 
-        return {data: {id: user.id}}
+        return {data: {id: user.userId}}
         } catch (error) {
             return {error: {
                 message: (error as Error).message
@@ -35,7 +38,7 @@ export class UserService {
     public async GetUser(req: RestGetUser) : Promise<ResponseGetUser> {
         try {
             const password = encryptPassword(req.password)
-            const user = await this.userRepository.findUnique({
+            const user = await prisma.findUnique({
                 where: {
                     email: req.email,
                     password
@@ -46,10 +49,12 @@ export class UserService {
             }}
             const verified = password === user.password
             return verified ? {data: {
-                id: user.id,
+                id: user.userId,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                email: user.email
+                email: user.email,
+                role : user.role,
+                groupId : user.groupId
             }} : {error: {
                 message: 'Password is incorrect'
             }}

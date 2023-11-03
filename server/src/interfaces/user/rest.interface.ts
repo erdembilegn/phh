@@ -3,6 +3,8 @@ export interface RestCreateUser{
     lastName: string;
     email: string;
     password: string;
+    role : string;
+    groupId : string;
 }
 
 export interface RestGetUser {

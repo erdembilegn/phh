@@ -14,5 +14,7 @@ export interface ResponseGetUser {
         firstName: string;
         lastName: string;
         email: string;
+        role : string;
+        groupId : string;
     }
 }
