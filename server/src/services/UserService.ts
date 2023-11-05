@@ -20,6 +20,7 @@ export class UserService {
           lastName: req.lastName,
           password,
           groupId: req.groupId,
+          role: req.role,
         },
       });
 
@@ -63,6 +64,7 @@ export class UserService {
               lastName: user.lastName,
               email: user.email,
               groupId: user.groupId,
+              role: user.role,
             },
           }
         : {
@@ -99,6 +101,7 @@ export class UserService {
           lastName: user.lastName,
           email: user.email,
           groupId: user.groupId,
+          role: user.role,
         },
       };
     } catch (error) {

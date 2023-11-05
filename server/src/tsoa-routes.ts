@@ -37,6 +37,7 @@ const models: TsoaRoute.Models = {
             "email": {"dataType":"string","required":true},
             "password": {"dataType":"string","required":true},
             "groupId": {"dataType":"string","required":true},
+            "role": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -45,7 +46,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "error": {"ref":"GenericError"},
-            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"groupId":{"dataType":"string","required":true},"email":{"dataType":"string","required":true},"lastName":{"dataType":"string","required":true},"firstName":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}},
+            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"role":{"dataType":"string","required":true},"groupId":{"dataType":"string","required":true},"email":{"dataType":"string","required":true},"lastName":{"dataType":"string","required":true},"firstName":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}},
         },
         "additionalProperties": false,
     },
@@ -63,7 +64,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "error": {"ref":"GenericError"},
-            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"groupId":{"dataType":"string","required":true},"email":{"dataType":"string","required":true},"lastName":{"dataType":"string","required":true},"firstName":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}},
+            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"role":{"dataType":"string","required":true},"groupId":{"dataType":"string","required":true},"email":{"dataType":"string","required":true},"lastName":{"dataType":"string","required":true},"firstName":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}},
         },
         "additionalProperties": false,
     },

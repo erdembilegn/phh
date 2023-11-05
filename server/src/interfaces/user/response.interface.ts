@@ -15,6 +15,7 @@ export interface ResponseGetUser {
     lastName: string;
     email: string;
     groupId: string;
+    role: string;
   };
 }
 
@@ -38,5 +39,6 @@ export interface ResponseGetUserById {
     lastName: string;
     email: string;
     groupId: string;
+    role: string;
   };
 }

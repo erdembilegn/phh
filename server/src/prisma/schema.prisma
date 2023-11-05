@@ -17,4 +17,5 @@ model User {
   lastName  String
   password  String
   groupId   String
+  role      String
 }
