@@ -1,10 +1,10 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express, { Express, NextFunction, Request, Response } from 'express';
+import logger from 'morgan';
 import { serve, setup } from 'swagger-ui-express';
 import swaggerDocument from '../spec/swagger.json';
 import { RegisterRoutes } from './tsoa-routes';
-import logger from 'morgan'
 
 
 class App {
@@ -21,7 +21,11 @@ class App {
   private setupMiddlewares(): void {
     this.app.use(logger('dev'));
     this.app.use(express.json());
-    this.app.use(cors());
+    const corsOptions = {
+      origin: 'http://localhost:3000',
+      credentials: true,
+    };
+    this.app.use(cors(corsOptions));
   }
 
   private async startServer(): Promise<void> {

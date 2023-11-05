@@ -1,5 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,50 +11,10 @@ datasource db {
 }
 
 model User {
-  userId    String @id @unique @default(uuid())
+  id        String @id @unique @default(uuid())
   email     String @unique
   firstName String
   lastName  String
   password  String
-  role      String
-  group     Group @relation(fields: [groupId], references: [groupId])
   groupId   String
-}
-
-model Group{
-  groupId   String @id @unique @default(uuid())
-  groupName String
-  user User[]
-  gamification GamificationOnGroup[]
-}
-
-model GamificationOnGroup{
-  group           Group @relation(fields: [groupId], references: [groupId])
-  groupId         String
-  gamification    Gamification @relation(fields: [gamificationId], references: [gamificationId])
-  gamificationId  String
-  @@id([groupId, gamificationId])
-}
-
-model Gamification{
-  gamificationId  String @id @unique @default(uuid())
-  gamificationName   String
-  group GamificationOnGroup[]
-  award AwardOnGamification[]
-}
-
-model AwardOnGamification{
-  award           Award @relation(fields: [awardId], references: [awardId])
-  awardId         String
-  gamification    Gamification @relation(fields: [gamificationId], references: [gamificationId])
-  gamificationId  String
-  @@id([awardId, gamificationId])
-}
-
-model Award{
-  awardId       String @id @unique @default(uuid())
-  awardName     String
-  awardPicure   String
-  assessment    Json[]
-  gamification  AwardOnGamification[]
 }

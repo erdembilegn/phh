@@ -18,8 +18,16 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
+    "paths": {
+      "@utils/api": ["src/utils/api/index.ts"],
+      "@libs/colors": ["src/libs/colors/index.ts"],
+      "@libs/text": ["src/libs/text/index.ts"],
+      "@libs/hooks": ["src/libs/hooks/index.ts"],
+      "@libs/jotai": ["src/libs/jotai/index.ts"],
+    }
+    },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

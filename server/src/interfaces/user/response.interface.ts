@@ -1,20 +1,42 @@
-import { GenericError } from "../main.interface";
+import { GenericError } from '../main.interface';
 
 export interface ResponseCreateUser {
-    error?: GenericError
-    data?: {
-        id: string;
-    }
+  error?: GenericError;
+  data?: {
+    id: string;
+  };
 }
 
 export interface ResponseGetUser {
-    error?: GenericError
-    data?: {
+  error?: GenericError;
+  data?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    groupId: string;
+  };
+}
+
+export interface ResponseGetAllUser {
+  error?: GenericError;
+  data?:
+    | {
         id: string;
         firstName: string;
         lastName: string;
         email: string;
-        role : string;
-        groupId : string;
-    }
+      }[]
+    | null;
+}
+
+export interface ResponseGetUserById {
+  error?: GenericError;
+  data?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    groupId: string;
+  };
 }

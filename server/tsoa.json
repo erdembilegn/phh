@@ -3,15 +3,24 @@
   "noImplicitAdditionalProperties": "throw-on-extras",
   "controllerPathGlobs": ["src/controllers/*.controller.ts"],
   "routes": {
-    "basePath": "/spa-template",
+    "authenticationModule": "./src/utils/Authentication.ts",
+    "basePath": "/templateApi",
     "routesDir": "./src",
     "middleware": "express",
     "routesFileName": "tsoa-routes.ts"
   },
   "spec": {
+    "securityDefinitions": {
+      "jwt": {
+          "type": "apiKey",
+          "name": "Authorization",
+            "in": "headers",
+            "description": "JWT Token in the Authorization header"
+      }
+  },
     "outputDirectory": "./spec",
     "host": "localhost:8000",
-    "basePath": "/spa-template",
+    "basePath": "/templateApi",
     "specVersion": 3,
     "schemes": ["http"]
   },
@@ -19,3 +28,4 @@
     "baseUrl": "."
   }
 }
+
