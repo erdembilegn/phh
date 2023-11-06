@@ -15,6 +15,8 @@ export default defineConfig({
       '@libs/text': 'src/libs/text/index.ts',
       '@libs/jotai': 'src/libs/jotai/index.ts',
       '@libs/hooks': 'src/libs/hooks/index.ts',
+      '@utils/functions': 'src/utils/functions/index.ts',
+      '@utils/const': 'src/utils/const/index.ts',
     },
   },
 });

@@ -39,6 +39,38 @@ export interface GenericError {
 /**
  * 
  * @export
+ * @interface ResponseCreateAward
+ */
+export interface ResponseCreateAward {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseCreateAward
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseCreateAwardData}
+     * @memberof ResponseCreateAward
+     */
+    'data'?: ResponseCreateAwardData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseCreateAwardData
+ */
+export interface ResponseCreateAwardData {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseCreateAwardData
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
  * @interface ResponseCreateUser
  */
 export interface ResponseCreateUser {
@@ -50,21 +82,70 @@ export interface ResponseCreateUser {
     'error'?: GenericError;
     /**
      * 
-     * @type {ResponseCreateUserData}
+     * @type {ResponseCreateAwardData}
      * @memberof ResponseCreateUser
      */
-    'data'?: ResponseCreateUserData;
+    'data'?: ResponseCreateAwardData;
 }
 /**
  * 
  * @export
- * @interface ResponseCreateUserData
+ * @interface ResponseGetAward
  */
-export interface ResponseCreateUserData {
+export interface ResponseGetAward {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetAward
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetAwardDataInner>}
+     * @memberof ResponseGetAward
+     */
+    'data'?: Array<ResponseGetAwardDataInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAwardDataInner
+ */
+export interface ResponseGetAwardDataInner {
     /**
      * 
      * @type {string}
-     * @memberof ResponseCreateUserData
+     * @memberof ResponseGetAwardDataInner
+     */
+    'image': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardDataInner
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardDataInner
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardDataInner
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardDataInner
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardDataInner
      */
     'id': string;
 }
@@ -117,6 +198,12 @@ export interface ResponseGetUserData {
      * @type {string}
      * @memberof ResponseGetUserData
      */
+    'role': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetUserData
+     */
     'groupId': string;
     /**
      * 
@@ -142,6 +229,31 @@ export interface ResponseGetUserData {
      * @memberof ResponseGetUserData
      */
     'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateAward
+ */
+export interface RestCreateAward {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateAward
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateAward
+     */
+    'image': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateAward
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -179,7 +291,15 @@ export interface RestCreateUser {
      * @memberof RestCreateUser
      */
     'groupId': string;
+    /**
+     * 
+     * @type {Role}
+     * @memberof RestCreateUser
+     */
+    'role': Role;
 }
+
+
 /**
  * 
  * @export
@@ -199,6 +319,125 @@ export interface RestGetUser {
      */
     'password': string;
 }
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const Role = {
+    Student: 'Student',
+    Teacher: 'Teacher',
+    Admin: 'Admin'
+} as const;
+
+export type Role = typeof Role[keyof typeof Role];
+
+
+
+/**
+ * CreateAwardApi - axios parameter creator
+ * @export
+ */
+export const CreateAwardApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestCreateAward} restCreateAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createAward: async (restCreateAward: RestCreateAward, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restCreateAward' is not null or undefined
+            assertParamExists('createAward', 'restCreateAward', restCreateAward)
+            const localVarPath = `/award/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restCreateAward, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * CreateAwardApi - functional programming interface
+ * @export
+ */
+export const CreateAwardApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CreateAwardApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateAward} restCreateAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createAward(restCreateAward: RestCreateAward, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseCreateAward>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createAward(restCreateAward, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * CreateAwardApi - factory interface
+ * @export
+ */
+export const CreateAwardApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CreateAwardApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateAward} restCreateAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createAward(restCreateAward: RestCreateAward, options?: any): AxiosPromise<ResponseCreateAward> {
+            return localVarFp.createAward(restCreateAward, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * CreateAwardApi - object-oriented interface
+ * @export
+ * @class CreateAwardApi
+ * @extends {BaseAPI}
+ */
+export class CreateAwardApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestCreateAward} restCreateAward 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CreateAwardApi
+     */
+    public createAward(restCreateAward: RestCreateAward, options?: AxiosRequestConfig) {
+        return CreateAwardApiFp(this.configuration).createAward(restCreateAward, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
 
 /**
  * CreateUserApi - axios parameter creator
@@ -299,6 +538,101 @@ export class CreateUserApi extends BaseAPI {
      */
     public createUser(restCreateUser: RestCreateUser, options?: AxiosRequestConfig) {
         return CreateUserApiFp(this.configuration).createUser(restCreateUser, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetAwardApi - axios parameter creator
+ * @export
+ */
+export const GetAwardApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAward: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/award/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetAwardApi - functional programming interface
+ * @export
+ */
+export const GetAwardApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetAwardApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAward(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetAward>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAward(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetAwardApi - factory interface
+ * @export
+ */
+export const GetAwardApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetAwardApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAward(options?: any): AxiosPromise<ResponseGetAward> {
+            return localVarFp.getAward(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetAwardApi - object-oriented interface
+ * @export
+ * @class GetAwardApi
+ * @extends {BaseAPI}
+ */
+export class GetAwardApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetAwardApi
+     */
+    public getAward(options?: AxiosRequestConfig) {
+        return GetAwardApiFp(this.configuration).getAward(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

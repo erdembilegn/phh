@@ -7,4 +7,5 @@ export const userInfoAtom = atom<ResponseGetUserData>({
   lastName: '',
   email: '',
   groupId: '',
+  role: '',
 });

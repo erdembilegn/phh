@@ -1,10 +1,4 @@
-export const loginText = {
-  email: 'Цахим шуудан',
-  password: 'Нууц үг',
-  login: 'Нэвтрэх',
-  text: 'Gamification',
-};
-
-export const homeText = {
-  title: 'Gamification',
-};
+export { GamificationListText } from './GamificationListText';
+export { RankModalText } from './RankModalText';
+export { headerText } from './headerText';
+export { loginText } from './loginText';

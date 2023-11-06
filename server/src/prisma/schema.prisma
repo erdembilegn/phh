@@ -11,11 +11,22 @@ datasource db {
 }
 
 model User {
-  id        String @id @unique @default(uuid())
-  email     String @unique
+  id        String   @id @unique @default(uuid())
+  email     String   @unique
   firstName String
   lastName  String
   password  String
   groupId   String
   role      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Award {
+  id          String   @id @unique @default(uuid())
+  name        String
+  createdUser String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  image       String
 }

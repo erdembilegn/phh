@@ -19,7 +19,9 @@ export const useUserInfo = () => {
         userInfo.email === null ||
         userInfo.email.length === 0 ||
         userInfo.groupId.length === 0 ||
-        userInfo.groupId === null) &&
+        userInfo.groupId === null ||
+        userInfo.role === null ||
+        userInfo.role.length === 0) &&
       token
     ) {
       const decodedToken = jwt.decode(token ?? '') as {
@@ -42,6 +44,7 @@ export const useUserInfo = () => {
               lastName: res.data.data?.lastName,
               id,
               groupId: res.data.data?.groupId,
+              role: res.data.data?.role,
             });
           }
         });
