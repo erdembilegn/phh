@@ -1,8 +1,9 @@
 export enum headerText {
   logout = 'Гарах',
-  title = 'Gamification',
-  evaluate = 'Суралцагчын үнэлгээ',
+  title = 'Урамшууллын программ',
+  evaluate = 'Суралцагчдын үнэлгээ',
   rating = 'Шилдгийн самбар',
   rank = 'Миний цол',
-  rewardList = 'урамшуулалын жагсаалт',
+  rewardList = 'Урамшууллын удирдлага',
+  groupList = 'Бүлгийн удирдлага',
 }

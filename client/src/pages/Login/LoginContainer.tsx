@@ -8,7 +8,7 @@ import loginLogo from '../../libs/assets/loginLogo.png';
 import LoginForm from './components/LoginForm';
 
 const LoginContainer: React.FC = () => {
-  const toast = useToast({ position: 'top' });
+  const toast = useToast({ position: 'top', isClosable: true });
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<RestGetUser>();

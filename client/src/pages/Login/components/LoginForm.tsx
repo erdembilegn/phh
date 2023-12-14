@@ -17,7 +17,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
       >
         <Flex alignItems={'center'} gap={'4'}>
           <Image src={logo} w="36px" h="30px" />
-          <Heading fontWeight={800} color={Colors.primary}>
+          <Heading fontWeight={500} color={Colors.primary} fontSize={'26px'}>
             {loginText.text}
           </Heading>
         </Flex>

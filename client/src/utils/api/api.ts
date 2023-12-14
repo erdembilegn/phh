@@ -26,6 +26,444 @@ import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError } from './base';
 /**
  * 
  * @export
+ * @interface DeleteAssessment200Response
+ */
+export interface DeleteAssessment200Response {
+    /**
+     * 
+     * @type {DeleteAssessment200ResponseAnyOf1Data}
+     * @memberof DeleteAssessment200Response
+     */
+    'data': DeleteAssessment200ResponseAnyOf1Data;
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteAssessment200Response
+     */
+    'error': any;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAssessment200ResponseAnyOf
+ */
+export interface DeleteAssessment200ResponseAnyOf {
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteAssessment200ResponseAnyOf
+     */
+    'data'?: any;
+    /**
+     * 
+     * @type {DeleteAssessment200ResponseAnyOfError}
+     * @memberof DeleteAssessment200ResponseAnyOf
+     */
+    'error': DeleteAssessment200ResponseAnyOfError;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAssessment200ResponseAnyOf1
+ */
+export interface DeleteAssessment200ResponseAnyOf1 {
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteAssessment200ResponseAnyOf1
+     */
+    'error'?: any;
+    /**
+     * 
+     * @type {DeleteAssessment200ResponseAnyOf1Data}
+     * @memberof DeleteAssessment200ResponseAnyOf1
+     */
+    'data': DeleteAssessment200ResponseAnyOf1Data;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAssessment200ResponseAnyOf1Data
+ */
+export interface DeleteAssessment200ResponseAnyOf1Data {
+    /**
+     * 
+     * @type {DeleteAssessment200ResponseAnyOf1DataDeletedAssessment}
+     * @memberof DeleteAssessment200ResponseAnyOf1Data
+     */
+    'deletedAssessment': DeleteAssessment200ResponseAnyOf1DataDeletedAssessment;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOf1Data
+     */
+    'message': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAssessment200ResponseAnyOf1DataDeletedAssessment
+ */
+export interface DeleteAssessment200ResponseAnyOf1DataDeletedAssessment {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOf1DataDeletedAssessment
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOf1DataDeletedAssessment
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOf1DataDeletedAssessment
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOf1DataDeletedAssessment
+     */
+    'assessmentName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOf1DataDeletedAssessment
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAssessment200ResponseAnyOfError
+ */
+export interface DeleteAssessment200ResponseAnyOfError {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAssessment200ResponseAnyOfError
+     */
+    'message': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAward200Response
+ */
+export interface DeleteAward200Response {
+    /**
+     * 
+     * @type {DeleteAward200ResponseAnyOfData}
+     * @memberof DeleteAward200Response
+     */
+    'data': DeleteAward200ResponseAnyOfData;
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteAward200Response
+     */
+    'error': any;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAward200ResponseAnyOf
+ */
+export interface DeleteAward200ResponseAnyOf {
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteAward200ResponseAnyOf
+     */
+    'error'?: any;
+    /**
+     * 
+     * @type {DeleteAward200ResponseAnyOfData}
+     * @memberof DeleteAward200ResponseAnyOf
+     */
+    'data': DeleteAward200ResponseAnyOfData;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAward200ResponseAnyOfData
+ */
+export interface DeleteAward200ResponseAnyOfData {
+    /**
+     * 
+     * @type {DeleteAward200ResponseAnyOfDataDeletedAward}
+     * @memberof DeleteAward200ResponseAnyOfData
+     */
+    'deletedAward': DeleteAward200ResponseAnyOfDataDeletedAward;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfData
+     */
+    'message': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteAward200ResponseAnyOfDataDeletedAward
+ */
+export interface DeleteAward200ResponseAnyOfDataDeletedAward {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfDataDeletedAward
+     */
+    'image': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfDataDeletedAward
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfDataDeletedAward
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfDataDeletedAward
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfDataDeletedAward
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteAward200ResponseAnyOfDataDeletedAward
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteGroup200Response
+ */
+export interface DeleteGroup200Response {
+    /**
+     * 
+     * @type {DeleteGroup200ResponseAnyOfData}
+     * @memberof DeleteGroup200Response
+     */
+    'data': DeleteGroup200ResponseAnyOfData;
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteGroup200Response
+     */
+    'error': any;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteGroup200ResponseAnyOf
+ */
+export interface DeleteGroup200ResponseAnyOf {
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteGroup200ResponseAnyOf
+     */
+    'error'?: any;
+    /**
+     * 
+     * @type {DeleteGroup200ResponseAnyOfData}
+     * @memberof DeleteGroup200ResponseAnyOf
+     */
+    'data': DeleteGroup200ResponseAnyOfData;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteGroup200ResponseAnyOfData
+ */
+export interface DeleteGroup200ResponseAnyOfData {
+    /**
+     * 
+     * @type {DeleteGroup200ResponseAnyOfDataDeletedGroup}
+     * @memberof DeleteGroup200ResponseAnyOfData
+     */
+    'deletedGroup': DeleteGroup200ResponseAnyOfDataDeletedGroup;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteGroup200ResponseAnyOfData
+     */
+    'message': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteGroup200ResponseAnyOfDataDeletedGroup
+ */
+export interface DeleteGroup200ResponseAnyOfDataDeletedGroup {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteGroup200ResponseAnyOfDataDeletedGroup
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteGroup200ResponseAnyOfDataDeletedGroup
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteGroup200ResponseAnyOfDataDeletedGroup
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteGroup200ResponseAnyOfDataDeletedGroup
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteGroup200ResponseAnyOfDataDeletedGroup
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteUser200Response
+ */
+export interface DeleteUser200Response {
+    /**
+     * 
+     * @type {DeleteUser200ResponseAnyOfData}
+     * @memberof DeleteUser200Response
+     */
+    'data': DeleteUser200ResponseAnyOfData;
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteUser200Response
+     */
+    'error': any;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteUser200ResponseAnyOf
+ */
+export interface DeleteUser200ResponseAnyOf {
+    /**
+     * 
+     * @type {any}
+     * @memberof DeleteUser200ResponseAnyOf
+     */
+    'error'?: any;
+    /**
+     * 
+     * @type {DeleteUser200ResponseAnyOfData}
+     * @memberof DeleteUser200ResponseAnyOf
+     */
+    'data': DeleteUser200ResponseAnyOfData;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteUser200ResponseAnyOfData
+ */
+export interface DeleteUser200ResponseAnyOfData {
+    /**
+     * 
+     * @type {DeleteUser200ResponseAnyOfDataDeletedUser}
+     * @memberof DeleteUser200ResponseAnyOfData
+     */
+    'deletedUser': DeleteUser200ResponseAnyOfDataDeletedUser;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfData
+     */
+    'message': string;
+}
+/**
+ * 
+ * @export
+ * @interface DeleteUser200ResponseAnyOfDataDeletedUser
+ */
+export interface DeleteUser200ResponseAnyOfDataDeletedUser {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'role': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'groupId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'password': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'lastName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'firstName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'email': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeleteUser200ResponseAnyOfDataDeletedUser
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
  * @interface GenericError
  */
 export interface GenericError {
@@ -35,6 +473,38 @@ export interface GenericError {
      * @memberof GenericError
      */
     'message': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseCreateAssessment
+ */
+export interface ResponseCreateAssessment {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseCreateAssessment
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseCreateAssessmentData}
+     * @memberof ResponseCreateAssessment
+     */
+    'data'?: ResponseCreateAssessmentData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseCreateAssessmentData
+ */
+export interface ResponseCreateAssessmentData {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseCreateAssessmentData
+     */
+    'id': string;
 }
 /**
  * 
@@ -50,23 +520,67 @@ export interface ResponseCreateAward {
     'error'?: GenericError;
     /**
      * 
-     * @type {ResponseCreateAwardData}
+     * @type {ResponseCreateAssessmentData}
      * @memberof ResponseCreateAward
      */
-    'data'?: ResponseCreateAwardData;
+    'data'?: ResponseCreateAssessmentData;
 }
 /**
  * 
  * @export
- * @interface ResponseCreateAwardData
+ * @interface ResponseCreateGamification
  */
-export interface ResponseCreateAwardData {
+export interface ResponseCreateGamification {
     /**
      * 
-     * @type {string}
-     * @memberof ResponseCreateAwardData
+     * @type {GenericError}
+     * @memberof ResponseCreateGamification
      */
-    'id': string;
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseCreateAssessmentData}
+     * @memberof ResponseCreateGamification
+     */
+    'data'?: ResponseCreateAssessmentData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseCreateGrade
+ */
+export interface ResponseCreateGrade {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseCreateGrade
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseCreateAssessmentData}
+     * @memberof ResponseCreateGrade
+     */
+    'data'?: ResponseCreateAssessmentData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseCreateGroup
+ */
+export interface ResponseCreateGroup {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseCreateGroup
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseCreateAssessmentData}
+     * @memberof ResponseCreateGroup
+     */
+    'data'?: ResponseCreateAssessmentData;
 }
 /**
  * 
@@ -82,10 +596,135 @@ export interface ResponseCreateUser {
     'error'?: GenericError;
     /**
      * 
-     * @type {ResponseCreateAwardData}
+     * @type {ResponseCreateAssessmentData}
      * @memberof ResponseCreateUser
      */
-    'data'?: ResponseCreateAwardData;
+    'data'?: ResponseCreateAssessmentData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAllGroup
+ */
+export interface ResponseGetAllGroup {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetAllGroup
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetGroupData>}
+     * @memberof ResponseGetAllGroup
+     */
+    'data'?: Array<ResponseGetGroupData>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAllUser
+ */
+export interface ResponseGetAllUser {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetAllUser
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetUserData>}
+     * @memberof ResponseGetAllUser
+     */
+    'data'?: Array<ResponseGetUserData>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAssessment
+ */
+export interface ResponseGetAssessment {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetAssessment
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetAssessmentDataInner>}
+     * @memberof ResponseGetAssessment
+     */
+    'data'?: Array<ResponseGetAssessmentDataInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAssessmentDataInner
+ */
+export interface ResponseGetAssessmentDataInner {
+    /**
+     * 
+     * @type {Array<ResponseGetAssessmentDataInnerGamificationsInner>}
+     * @memberof ResponseGetAssessmentDataInner
+     */
+    'gamifications': Array<ResponseGetAssessmentDataInnerGamificationsInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInner
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInner
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInner
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInner
+     */
+    'assessmentName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInner
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAssessmentDataInnerGamificationsInner
+ */
+export interface ResponseGetAssessmentDataInnerGamificationsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInnerGamificationsInner
+     */
+    'gamificationEndDate': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInnerGamificationsInner
+     */
+    'gamificationStartDate': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAssessmentDataInnerGamificationsInner
+     */
+    'gamificationId': string;
 }
 /**
  * 
@@ -109,9 +748,53 @@ export interface ResponseGetAward {
 /**
  * 
  * @export
+ * @interface ResponseGetAwardById
+ */
+export interface ResponseGetAwardById {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetAwardById
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseGetAwardByIdData}
+     * @memberof ResponseGetAwardById
+     */
+    'data'?: ResponseGetAwardByIdData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetAwardByIdData
+ */
+export interface ResponseGetAwardByIdData {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardByIdData
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetAwardByIdData
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
  * @interface ResponseGetAwardDataInner
  */
 export interface ResponseGetAwardDataInner {
+    /**
+     * 
+     * @type {Array<ResponseGetAssessmentDataInnerGamificationsInner>}
+     * @memberof ResponseGetAwardDataInner
+     */
+    'gamifications': Array<ResponseGetAssessmentDataInnerGamificationsInner>;
     /**
      * 
      * @type {string}
@@ -148,6 +831,242 @@ export interface ResponseGetAwardDataInner {
      * @memberof ResponseGetAwardDataInner
      */
     'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGamification
+ */
+export interface ResponseGetGamification {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetGamification
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetGamificationDataInner>}
+     * @memberof ResponseGetGamification
+     */
+    'data'?: Array<ResponseGetGamificationDataInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGamificationDataInner
+ */
+export interface ResponseGetGamificationDataInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {Array<RestCreateGamificationAssessmentsInner>}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'assessments': Array<RestCreateGamificationAssessmentsInner>;
+    /**
+     * 
+     * @type {Array<RestCreateGamificationAwardsInner>}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'awards': Array<RestCreateGamificationAwardsInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'groupId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'gamificationEndDate': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'gamificationStartDate': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'gamificationName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGamificationDataInner
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGrade
+ */
+export interface ResponseGetGrade {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetGrade
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetGradeDataInner>}
+     * @memberof ResponseGetGrade
+     */
+    'data'?: Array<ResponseGetGradeDataInner>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGradeDataInner
+ */
+export interface ResponseGetGradeDataInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'gradeNumber': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'gamificationId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'assessmentId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'userId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGroup
+ */
+export interface ResponseGetGroup {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetGroup
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseGetGroupData}
+     * @memberof ResponseGetGroup
+     */
+    'data'?: ResponseGetGroupData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGroupData
+ */
+export interface ResponseGetGroupData {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupData
+     */
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupData
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupData
+     */
+    'createdUser': string;
+    /**
+     * 
+     * @type {Array<ResponseGetGroupDataGamificationsInner>}
+     * @memberof ResponseGetGroupData
+     */
+    'gamifications': Array<ResponseGetGroupDataGamificationsInner>;
+    /**
+     * 
+     * @type {Array<ResponseGetGroupDataUsersInner>}
+     * @memberof ResponseGetGroupData
+     */
+    'users': Array<ResponseGetGroupDataUsersInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupData
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupData
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGroupDataGamificationsInner
+ */
+export interface ResponseGetGroupDataGamificationsInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupDataGamificationsInner
+     */
+    'gamificationId': string;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseGetGroupDataUsersInner
+ */
+export interface ResponseGetGroupDataUsersInner {
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGroupDataUsersInner
+     */
+    'userId': string;
 }
 /**
  * 
@@ -190,6 +1109,25 @@ export interface ResponseGetUserById {
 /**
  * 
  * @export
+ * @interface ResponseGetUserByRoleGroup
+ */
+export interface ResponseGetUserByRoleGroup {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseGetUserByRoleGroup
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<ResponseGetUserData>}
+     * @memberof ResponseGetUserByRoleGroup
+     */
+    'data'?: Array<ResponseGetUserData>;
+}
+/**
+ * 
+ * @export
  * @interface ResponseGetUserData
  */
 export interface ResponseGetUserData {
@@ -204,7 +1142,7 @@ export interface ResponseGetUserData {
      * @type {string}
      * @memberof ResponseGetUserData
      */
-    'groupId': string;
+    'groupId': string | null;
     /**
      * 
      * @type {string}
@@ -233,6 +1171,101 @@ export interface ResponseGetUserData {
 /**
  * 
  * @export
+ * @interface ResponseUpdateAssessment
+ */
+export interface ResponseUpdateAssessment {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseUpdateAssessment
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseGetAssessmentDataInner}
+     * @memberof ResponseUpdateAssessment
+     */
+    'data'?: ResponseGetAssessmentDataInner;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseUpdateAward
+ */
+export interface ResponseUpdateAward {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseUpdateAward
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {Array<DeleteAward200ResponseAnyOfDataDeletedAward>}
+     * @memberof ResponseUpdateAward
+     */
+    'data'?: Array<DeleteAward200ResponseAnyOfDataDeletedAward>;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseUpdateGroup
+ */
+export interface ResponseUpdateGroup {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseUpdateGroup
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseGetGroupData}
+     * @memberof ResponseUpdateGroup
+     */
+    'data'?: ResponseGetGroupData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseUpdateUser
+ */
+export interface ResponseUpdateUser {
+    /**
+     * 
+     * @type {GenericError}
+     * @memberof ResponseUpdateUser
+     */
+    'error'?: GenericError;
+    /**
+     * 
+     * @type {ResponseGetUserData}
+     * @memberof ResponseUpdateUser
+     */
+    'data'?: ResponseGetUserData;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateAssessment
+ */
+export interface RestCreateAssessment {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateAssessment
+     */
+    'assessmentName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateAssessment
+     */
+    'createdUser': string;
+}
+/**
+ * 
+ * @export
  * @interface RestCreateAward
  */
 export interface RestCreateAward {
@@ -252,6 +1285,149 @@ export interface RestCreateAward {
      * 
      * @type {string}
      * @memberof RestCreateAward
+     */
+    'createdUser': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateGamification
+ */
+export interface RestCreateGamification {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamification
+     */
+    'gamificationName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamification
+     */
+    'gamificationStartDate': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamification
+     */
+    'gamificationEndDate': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamification
+     */
+    'groupId': string;
+    /**
+     * 
+     * @type {Array<RestCreateGamificationAwardsInner>}
+     * @memberof RestCreateGamification
+     */
+    'awards': Array<RestCreateGamificationAwardsInner>;
+    /**
+     * 
+     * @type {Array<RestCreateGamificationAssessmentsInner>}
+     * @memberof RestCreateGamification
+     */
+    'assessments': Array<RestCreateGamificationAssessmentsInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamification
+     */
+    'createdUser': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateGamificationAssessmentsInner
+ */
+export interface RestCreateGamificationAssessmentsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof RestCreateGamificationAssessmentsInner
+     */
+    'assessmentPercentage': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamificationAssessmentsInner
+     */
+    'assessmentId': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateGamificationAwardsInner
+ */
+export interface RestCreateGamificationAwardsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof RestCreateGamificationAwardsInner
+     */
+    'awardMaxPercentage': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof RestCreateGamificationAwardsInner
+     */
+    'awardMinPercentage': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGamificationAwardsInner
+     */
+    'awardId': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateGrade
+ */
+export interface RestCreateGrade {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGrade
+     */
+    'userId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGrade
+     */
+    'assessmentId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGrade
+     */
+    'gamificationId': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof RestCreateGrade
+     */
+    'gradeNumber': number;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateGroup
+ */
+export interface RestCreateGroup {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGroup
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGroup
      */
     'createdUser': string;
 }
@@ -290,7 +1466,7 @@ export interface RestCreateUser {
      * @type {string}
      * @memberof RestCreateUser
      */
-    'groupId': string;
+    'groupId': string | null;
     /**
      * 
      * @type {Role}
@@ -300,6 +1476,58 @@ export interface RestCreateUser {
 }
 
 
+/**
+ * 
+ * @export
+ * @interface RestDeleteAssessment
+ */
+export interface RestDeleteAssessment {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteAssessment
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestDeleteAward
+ */
+export interface RestDeleteAward {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteAward
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestDeleteGroup
+ */
+export interface RestDeleteGroup {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteGroup
+     */
+    'id': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestDeleteUser
+ */
+export interface RestDeleteUser {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteUser
+     */
+    'id': string;
+}
 /**
  * 
  * @export
@@ -322,6 +1550,139 @@ export interface RestGetUser {
 /**
  * 
  * @export
+ * @interface RestGetUserByRoleGroup
+ */
+export interface RestGetUserByRoleGroup {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestGetUserByRoleGroup
+     */
+    'role': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestGetUserByRoleGroup
+     */
+    'groupId': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestUpdateAssessment
+ */
+export interface RestUpdateAssessment {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAssessment
+     */
+    'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAssessment
+     */
+    'assessmentName'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface RestUpdateAward
+ */
+export interface RestUpdateAward {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAward
+     */
+    'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAward
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAward
+     */
+    'image'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface RestUpdateGroup
+ */
+export interface RestUpdateGroup {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateGroup
+     */
+    'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateGroup
+     */
+    'name'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface RestUpdateUser
+ */
+export interface RestUpdateUser {
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateUser
+     */
+    'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateUser
+     */
+    'firstName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateUser
+     */
+    'lastName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateUser
+     */
+    'email'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateUser
+     */
+    'password'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateUser
+     */
+    'groupId'?: string | null;
+    /**
+     * 
+     * @type {Role}
+     * @memberof RestUpdateUser
+     */
+    'role'?: Role;
+}
+
+
+/**
+ * 
+ * @export
  * @enum {string}
  */
 
@@ -332,6 +1693,110 @@ export const Role = {
 } as const;
 
 export type Role = typeof Role[keyof typeof Role];
+
+
+
+/**
+ * CreateAsessmentApi - axios parameter creator
+ * @export
+ */
+export const CreateAsessmentApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestCreateAssessment} restCreateAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createAssessment: async (restCreateAssessment: RestCreateAssessment, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restCreateAssessment' is not null or undefined
+            assertParamExists('createAssessment', 'restCreateAssessment', restCreateAssessment)
+            const localVarPath = `/assessment/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restCreateAssessment, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * CreateAsessmentApi - functional programming interface
+ * @export
+ */
+export const CreateAsessmentApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CreateAsessmentApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateAssessment} restCreateAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createAssessment(restCreateAssessment: RestCreateAssessment, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseCreateAssessment>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createAssessment(restCreateAssessment, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * CreateAsessmentApi - factory interface
+ * @export
+ */
+export const CreateAsessmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CreateAsessmentApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateAssessment} restCreateAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createAssessment(restCreateAssessment: RestCreateAssessment, options?: any): AxiosPromise<ResponseCreateAssessment> {
+            return localVarFp.createAssessment(restCreateAssessment, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * CreateAsessmentApi - object-oriented interface
+ * @export
+ * @class CreateAsessmentApi
+ * @extends {BaseAPI}
+ */
+export class CreateAsessmentApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestCreateAssessment} restCreateAssessment 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CreateAsessmentApi
+     */
+    public createAssessment(restCreateAssessment: RestCreateAssessment, options?: AxiosRequestConfig) {
+        return CreateAsessmentApiFp(this.configuration).createAssessment(restCreateAssessment, options).then((request) => request(this.axios, this.basePath));
+    }
+}
 
 
 
@@ -434,6 +1899,318 @@ export class CreateAwardApi extends BaseAPI {
      */
     public createAward(restCreateAward: RestCreateAward, options?: AxiosRequestConfig) {
         return CreateAwardApiFp(this.configuration).createAward(restCreateAward, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * CreateGamificationApi - axios parameter creator
+ * @export
+ */
+export const CreateGamificationApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestCreateGamification} restCreateGamification 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGamification: async (restCreateGamification: RestCreateGamification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restCreateGamification' is not null or undefined
+            assertParamExists('createGamification', 'restCreateGamification', restCreateGamification)
+            const localVarPath = `/Gamification/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restCreateGamification, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * CreateGamificationApi - functional programming interface
+ * @export
+ */
+export const CreateGamificationApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CreateGamificationApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateGamification} restCreateGamification 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createGamification(restCreateGamification: RestCreateGamification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseCreateGamification>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createGamification(restCreateGamification, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * CreateGamificationApi - factory interface
+ * @export
+ */
+export const CreateGamificationApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CreateGamificationApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateGamification} restCreateGamification 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGamification(restCreateGamification: RestCreateGamification, options?: any): AxiosPromise<ResponseCreateGamification> {
+            return localVarFp.createGamification(restCreateGamification, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * CreateGamificationApi - object-oriented interface
+ * @export
+ * @class CreateGamificationApi
+ * @extends {BaseAPI}
+ */
+export class CreateGamificationApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestCreateGamification} restCreateGamification 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CreateGamificationApi
+     */
+    public createGamification(restCreateGamification: RestCreateGamification, options?: AxiosRequestConfig) {
+        return CreateGamificationApiFp(this.configuration).createGamification(restCreateGamification, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * CreateGradeApi - axios parameter creator
+ * @export
+ */
+export const CreateGradeApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {Array<RestCreateGrade>} restCreateGrade 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGrade: async (restCreateGrade: Array<RestCreateGrade>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restCreateGrade' is not null or undefined
+            assertParamExists('createGrade', 'restCreateGrade', restCreateGrade)
+            const localVarPath = `/grade/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restCreateGrade, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * CreateGradeApi - functional programming interface
+ * @export
+ */
+export const CreateGradeApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CreateGradeApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {Array<RestCreateGrade>} restCreateGrade 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createGrade(restCreateGrade: Array<RestCreateGrade>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResponseCreateGrade>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createGrade(restCreateGrade, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * CreateGradeApi - factory interface
+ * @export
+ */
+export const CreateGradeApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CreateGradeApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {Array<RestCreateGrade>} restCreateGrade 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGrade(restCreateGrade: Array<RestCreateGrade>, options?: any): AxiosPromise<Array<ResponseCreateGrade>> {
+            return localVarFp.createGrade(restCreateGrade, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * CreateGradeApi - object-oriented interface
+ * @export
+ * @class CreateGradeApi
+ * @extends {BaseAPI}
+ */
+export class CreateGradeApi extends BaseAPI {
+    /**
+     * 
+     * @param {Array<RestCreateGrade>} restCreateGrade 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CreateGradeApi
+     */
+    public createGrade(restCreateGrade: Array<RestCreateGrade>, options?: AxiosRequestConfig) {
+        return CreateGradeApiFp(this.configuration).createGrade(restCreateGrade, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * CreateGroupApi - axios parameter creator
+ * @export
+ */
+export const CreateGroupApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestCreateGroup} restCreateGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGroup: async (restCreateGroup: RestCreateGroup, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restCreateGroup' is not null or undefined
+            assertParamExists('createGroup', 'restCreateGroup', restCreateGroup)
+            const localVarPath = `/group/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restCreateGroup, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * CreateGroupApi - functional programming interface
+ * @export
+ */
+export const CreateGroupApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = CreateGroupApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateGroup} restCreateGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createGroup(restCreateGroup: RestCreateGroup, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseCreateGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createGroup(restCreateGroup, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * CreateGroupApi - factory interface
+ * @export
+ */
+export const CreateGroupApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = CreateGroupApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestCreateGroup} restCreateGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGroup(restCreateGroup: RestCreateGroup, options?: any): AxiosPromise<ResponseCreateGroup> {
+            return localVarFp.createGroup(restCreateGroup, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * CreateGroupApi - object-oriented interface
+ * @export
+ * @class CreateGroupApi
+ * @extends {BaseAPI}
+ */
+export class CreateGroupApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestCreateGroup} restCreateGroup 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CreateGroupApi
+     */
+    public createGroup(restCreateGroup: RestCreateGroup, options?: AxiosRequestConfig) {
+        return CreateGroupApiFp(this.configuration).createGroup(restCreateGroup, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -544,6 +2321,707 @@ export class CreateUserApi extends BaseAPI {
 
 
 /**
+ * DeleteAssessmentApi - axios parameter creator
+ * @export
+ */
+export const DeleteAssessmentApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestDeleteAssessment} restDeleteAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAssessment: async (restDeleteAssessment: RestDeleteAssessment, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restDeleteAssessment' is not null or undefined
+            assertParamExists('deleteAssessment', 'restDeleteAssessment', restDeleteAssessment)
+            const localVarPath = `/assessment/delete`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restDeleteAssessment, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DeleteAssessmentApi - functional programming interface
+ * @export
+ */
+export const DeleteAssessmentApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DeleteAssessmentApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteAssessment} restDeleteAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteAssessment(restDeleteAssessment: RestDeleteAssessment, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteAssessment200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAssessment(restDeleteAssessment, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * DeleteAssessmentApi - factory interface
+ * @export
+ */
+export const DeleteAssessmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DeleteAssessmentApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteAssessment} restDeleteAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAssessment(restDeleteAssessment: RestDeleteAssessment, options?: any): AxiosPromise<DeleteAssessment200Response> {
+            return localVarFp.deleteAssessment(restDeleteAssessment, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * DeleteAssessmentApi - object-oriented interface
+ * @export
+ * @class DeleteAssessmentApi
+ * @extends {BaseAPI}
+ */
+export class DeleteAssessmentApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestDeleteAssessment} restDeleteAssessment 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DeleteAssessmentApi
+     */
+    public deleteAssessment(restDeleteAssessment: RestDeleteAssessment, options?: AxiosRequestConfig) {
+        return DeleteAssessmentApiFp(this.configuration).deleteAssessment(restDeleteAssessment, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * DeleteAwardApi - axios parameter creator
+ * @export
+ */
+export const DeleteAwardApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestDeleteAward} restDeleteAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAward: async (restDeleteAward: RestDeleteAward, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restDeleteAward' is not null or undefined
+            assertParamExists('deleteAward', 'restDeleteAward', restDeleteAward)
+            const localVarPath = `/award/delete`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restDeleteAward, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DeleteAwardApi - functional programming interface
+ * @export
+ */
+export const DeleteAwardApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DeleteAwardApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteAward} restDeleteAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteAward(restDeleteAward: RestDeleteAward, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteAward200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAward(restDeleteAward, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * DeleteAwardApi - factory interface
+ * @export
+ */
+export const DeleteAwardApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DeleteAwardApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteAward} restDeleteAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAward(restDeleteAward: RestDeleteAward, options?: any): AxiosPromise<DeleteAward200Response> {
+            return localVarFp.deleteAward(restDeleteAward, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * DeleteAwardApi - object-oriented interface
+ * @export
+ * @class DeleteAwardApi
+ * @extends {BaseAPI}
+ */
+export class DeleteAwardApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestDeleteAward} restDeleteAward 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DeleteAwardApi
+     */
+    public deleteAward(restDeleteAward: RestDeleteAward, options?: AxiosRequestConfig) {
+        return DeleteAwardApiFp(this.configuration).deleteAward(restDeleteAward, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * DeleteGroupApi - axios parameter creator
+ * @export
+ */
+export const DeleteGroupApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestDeleteGroup} restDeleteGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteGroup: async (restDeleteGroup: RestDeleteGroup, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restDeleteGroup' is not null or undefined
+            assertParamExists('deleteGroup', 'restDeleteGroup', restDeleteGroup)
+            const localVarPath = `/group/delete`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restDeleteGroup, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DeleteGroupApi - functional programming interface
+ * @export
+ */
+export const DeleteGroupApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DeleteGroupApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteGroup} restDeleteGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteGroup(restDeleteGroup: RestDeleteGroup, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteGroup200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteGroup(restDeleteGroup, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * DeleteGroupApi - factory interface
+ * @export
+ */
+export const DeleteGroupApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DeleteGroupApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteGroup} restDeleteGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteGroup(restDeleteGroup: RestDeleteGroup, options?: any): AxiosPromise<DeleteGroup200Response> {
+            return localVarFp.deleteGroup(restDeleteGroup, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * DeleteGroupApi - object-oriented interface
+ * @export
+ * @class DeleteGroupApi
+ * @extends {BaseAPI}
+ */
+export class DeleteGroupApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestDeleteGroup} restDeleteGroup 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DeleteGroupApi
+     */
+    public deleteGroup(restDeleteGroup: RestDeleteGroup, options?: AxiosRequestConfig) {
+        return DeleteGroupApiFp(this.configuration).deleteGroup(restDeleteGroup, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * DeleteUserApi - axios parameter creator
+ * @export
+ */
+export const DeleteUserApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestDeleteUser} restDeleteUser 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteUser: async (restDeleteUser: RestDeleteUser, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restDeleteUser' is not null or undefined
+            assertParamExists('deleteUser', 'restDeleteUser', restDeleteUser)
+            const localVarPath = `/user/delete`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restDeleteUser, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DeleteUserApi - functional programming interface
+ * @export
+ */
+export const DeleteUserApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DeleteUserApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteUser} restDeleteUser 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteUser(restDeleteUser: RestDeleteUser, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteUser200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteUser(restDeleteUser, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * DeleteUserApi - factory interface
+ * @export
+ */
+export const DeleteUserApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DeleteUserApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestDeleteUser} restDeleteUser 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteUser(restDeleteUser: RestDeleteUser, options?: any): AxiosPromise<DeleteUser200Response> {
+            return localVarFp.deleteUser(restDeleteUser, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * DeleteUserApi - object-oriented interface
+ * @export
+ * @class DeleteUserApi
+ * @extends {BaseAPI}
+ */
+export class DeleteUserApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestDeleteUser} restDeleteUser 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DeleteUserApi
+     */
+    public deleteUser(restDeleteUser: RestDeleteUser, options?: AxiosRequestConfig) {
+        return DeleteUserApiFp(this.configuration).deleteUser(restDeleteUser, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetAllGroupsApi - axios parameter creator
+ * @export
+ */
+export const GetAllGroupsApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllGroups: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/group/getAllGroup`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetAllGroupsApi - functional programming interface
+ * @export
+ */
+export const GetAllGroupsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetAllGroupsApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAllGroups(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetAllGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllGroups(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetAllGroupsApi - factory interface
+ * @export
+ */
+export const GetAllGroupsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetAllGroupsApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllGroups(options?: any): AxiosPromise<ResponseGetAllGroup> {
+            return localVarFp.getAllGroups(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetAllGroupsApi - object-oriented interface
+ * @export
+ * @class GetAllGroupsApi
+ * @extends {BaseAPI}
+ */
+export class GetAllGroupsApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetAllGroupsApi
+     */
+    public getAllGroups(options?: AxiosRequestConfig) {
+        return GetAllGroupsApiFp(this.configuration).getAllGroups(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetAllUserApi - axios parameter creator
+ * @export
+ */
+export const GetAllUserApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllUser: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/user/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetAllUserApi - functional programming interface
+ * @export
+ */
+export const GetAllUserApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetAllUserApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAllUser(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetAllUser>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllUser(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetAllUserApi - factory interface
+ * @export
+ */
+export const GetAllUserApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetAllUserApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllUser(options?: any): AxiosPromise<ResponseGetAllUser> {
+            return localVarFp.getAllUser(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetAllUserApi - object-oriented interface
+ * @export
+ * @class GetAllUserApi
+ * @extends {BaseAPI}
+ */
+export class GetAllUserApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetAllUserApi
+     */
+    public getAllUser(options?: AxiosRequestConfig) {
+        return GetAllUserApiFp(this.configuration).getAllUser(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetAsessmentApi - axios parameter creator
+ * @export
+ */
+export const GetAsessmentApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAssessment: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/assessment/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetAsessmentApi - functional programming interface
+ * @export
+ */
+export const GetAsessmentApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetAsessmentApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAssessment(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetAssessment>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAssessment(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetAsessmentApi - factory interface
+ * @export
+ */
+export const GetAsessmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetAsessmentApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAssessment(options?: any): AxiosPromise<ResponseGetAssessment> {
+            return localVarFp.getAssessment(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetAsessmentApi - object-oriented interface
+ * @export
+ * @class GetAsessmentApi
+ * @extends {BaseAPI}
+ */
+export class GetAsessmentApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetAsessmentApi
+     */
+    public getAssessment(options?: AxiosRequestConfig) {
+        return GetAsessmentApiFp(this.configuration).getAssessment(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
  * GetAwardApi - axios parameter creator
  * @export
  */
@@ -633,6 +3111,401 @@ export class GetAwardApi extends BaseAPI {
      */
     public getAward(options?: AxiosRequestConfig) {
         return GetAwardApiFp(this.configuration).getAward(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetAwardByIdApi - axios parameter creator
+ * @export
+ */
+export const GetAwardByIdApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {string} awardId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAwardById: async (awardId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'awardId' is not null or undefined
+            assertParamExists('getAwardById', 'awardId', awardId)
+            const localVarPath = `/award/getAwardById/{awardId}`
+                .replace(`{${"awardId"}}`, encodeURIComponent(String(awardId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetAwardByIdApi - functional programming interface
+ * @export
+ */
+export const GetAwardByIdApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetAwardByIdApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {string} awardId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAwardById(awardId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetAwardById>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAwardById(awardId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetAwardByIdApi - factory interface
+ * @export
+ */
+export const GetAwardByIdApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetAwardByIdApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {string} awardId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAwardById(awardId: string, options?: any): AxiosPromise<ResponseGetAwardById> {
+            return localVarFp.getAwardById(awardId, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetAwardByIdApi - object-oriented interface
+ * @export
+ * @class GetAwardByIdApi
+ * @extends {BaseAPI}
+ */
+export class GetAwardByIdApi extends BaseAPI {
+    /**
+     * 
+     * @param {string} awardId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetAwardByIdApi
+     */
+    public getAwardById(awardId: string, options?: AxiosRequestConfig) {
+        return GetAwardByIdApiFp(this.configuration).getAwardById(awardId, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetGamificationApi - axios parameter creator
+ * @export
+ */
+export const GetGamificationApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGamification: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/Gamification/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetGamificationApi - functional programming interface
+ * @export
+ */
+export const GetGamificationApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetGamificationApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGamification(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetGamification>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGamification(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetGamificationApi - factory interface
+ * @export
+ */
+export const GetGamificationApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetGamificationApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGamification(options?: any): AxiosPromise<ResponseGetGamification> {
+            return localVarFp.getGamification(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetGamificationApi - object-oriented interface
+ * @export
+ * @class GetGamificationApi
+ * @extends {BaseAPI}
+ */
+export class GetGamificationApi extends BaseAPI {
+    static getGamification: any;
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetGamificationApi
+     */
+    public getGamification(options?: AxiosRequestConfig) {
+        return GetGamificationApiFp(this.configuration).getGamification(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetGradeApi - axios parameter creator
+ * @export
+ */
+export const GetGradeApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGrade: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/grade/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetGradeApi - functional programming interface
+ * @export
+ */
+export const GetGradeApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetGradeApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGrade(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetGrade>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGrade(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetGradeApi - factory interface
+ * @export
+ */
+export const GetGradeApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetGradeApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGrade(options?: any): AxiosPromise<ResponseGetGrade> {
+            return localVarFp.getGrade(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetGradeApi - object-oriented interface
+ * @export
+ * @class GetGradeApi
+ * @extends {BaseAPI}
+ */
+export class GetGradeApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetGradeApi
+     */
+    public getGrade(options?: AxiosRequestConfig) {
+        return GetGradeApiFp(this.configuration).getGrade(options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetGroupApi - axios parameter creator
+ * @export
+ */
+export const GetGroupApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {string} groupId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroup: async (groupId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'groupId' is not null or undefined
+            assertParamExists('getGroup', 'groupId', groupId)
+            const localVarPath = `/group/get/{groupId}`
+                .replace(`{${"groupId"}}`, encodeURIComponent(String(groupId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetGroupApi - functional programming interface
+ * @export
+ */
+export const GetGroupApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetGroupApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {string} groupId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGroup(groupId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGroup(groupId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetGroupApi - factory interface
+ * @export
+ */
+export const GetGroupApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetGroupApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {string} groupId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGroup(groupId: string, options?: any): AxiosPromise<ResponseGetGroup> {
+            return localVarFp.getGroup(groupId, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetGroupApi - object-oriented interface
+ * @export
+ * @class GetGroupApi
+ * @extends {BaseAPI}
+ */
+export class GetGroupApi extends BaseAPI {
+    /**
+     * 
+     * @param {string} groupId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetGroupApi
+     */
+    public getGroup(groupId: string, options?: AxiosRequestConfig) {
+        return GetGroupApiFp(this.configuration).getGroup(groupId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -757,7 +3630,7 @@ export const GetUserByIdApiAxiosParamCreator = function (configuration?: Configu
         getUserById: async (userId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             assertParamExists('getUserById', 'userId', userId)
-            const localVarPath = `/user/{userId}`
+            const localVarPath = `/user/getUserById/{userId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -841,6 +3714,526 @@ export class GetUserByIdApi extends BaseAPI {
      */
     public getUserById(userId: string, options?: AxiosRequestConfig) {
         return GetUserByIdApiFp(this.configuration).getUserById(userId, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * GetUserByRoleAndGroupIdApi - axios parameter creator
+ * @export
+ */
+export const GetUserByRoleAndGroupIdApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestGetUserByRoleGroup} restGetUserByRoleGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getUserByRoleGroup: async (restGetUserByRoleGroup: RestGetUserByRoleGroup, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restGetUserByRoleGroup' is not null or undefined
+            assertParamExists('getUserByRoleGroup', 'restGetUserByRoleGroup', restGetUserByRoleGroup)
+            const localVarPath = `/user/getUserbyRoleGroupId`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restGetUserByRoleGroup, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * GetUserByRoleAndGroupIdApi - functional programming interface
+ * @export
+ */
+export const GetUserByRoleAndGroupIdApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = GetUserByRoleAndGroupIdApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestGetUserByRoleGroup} restGetUserByRoleGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getUserByRoleGroup(restGetUserByRoleGroup: RestGetUserByRoleGroup, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseGetUserByRoleGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUserByRoleGroup(restGetUserByRoleGroup, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * GetUserByRoleAndGroupIdApi - factory interface
+ * @export
+ */
+export const GetUserByRoleAndGroupIdApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = GetUserByRoleAndGroupIdApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestGetUserByRoleGroup} restGetUserByRoleGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getUserByRoleGroup(restGetUserByRoleGroup: RestGetUserByRoleGroup, options?: any): AxiosPromise<ResponseGetUserByRoleGroup> {
+            return localVarFp.getUserByRoleGroup(restGetUserByRoleGroup, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * GetUserByRoleAndGroupIdApi - object-oriented interface
+ * @export
+ * @class GetUserByRoleAndGroupIdApi
+ * @extends {BaseAPI}
+ */
+export class GetUserByRoleAndGroupIdApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestGetUserByRoleGroup} restGetUserByRoleGroup 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GetUserByRoleAndGroupIdApi
+     */
+    public getUserByRoleGroup(restGetUserByRoleGroup: RestGetUserByRoleGroup, options?: AxiosRequestConfig) {
+        return GetUserByRoleAndGroupIdApiFp(this.configuration).getUserByRoleGroup(restGetUserByRoleGroup, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * UpdateAssessmentApi - axios parameter creator
+ * @export
+ */
+export const UpdateAssessmentApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestUpdateAssessment} restUpdateAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateAssessment: async (restUpdateAssessment: RestUpdateAssessment, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restUpdateAssessment' is not null or undefined
+            assertParamExists('updateAssessment', 'restUpdateAssessment', restUpdateAssessment)
+            const localVarPath = `/assessment/update`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restUpdateAssessment, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * UpdateAssessmentApi - functional programming interface
+ * @export
+ */
+export const UpdateAssessmentApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = UpdateAssessmentApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateAssessment} restUpdateAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateAssessment(restUpdateAssessment: RestUpdateAssessment, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseUpdateAssessment>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateAssessment(restUpdateAssessment, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * UpdateAssessmentApi - factory interface
+ * @export
+ */
+export const UpdateAssessmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = UpdateAssessmentApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateAssessment} restUpdateAssessment 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateAssessment(restUpdateAssessment: RestUpdateAssessment, options?: any): AxiosPromise<ResponseUpdateAssessment> {
+            return localVarFp.updateAssessment(restUpdateAssessment, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * UpdateAssessmentApi - object-oriented interface
+ * @export
+ * @class UpdateAssessmentApi
+ * @extends {BaseAPI}
+ */
+export class UpdateAssessmentApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestUpdateAssessment} restUpdateAssessment 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UpdateAssessmentApi
+     */
+    public updateAssessment(restUpdateAssessment: RestUpdateAssessment, options?: AxiosRequestConfig) {
+        return UpdateAssessmentApiFp(this.configuration).updateAssessment(restUpdateAssessment, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * UpdateAwardApi - axios parameter creator
+ * @export
+ */
+export const UpdateAwardApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestUpdateAward} restUpdateAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateAward: async (restUpdateAward: RestUpdateAward, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restUpdateAward' is not null or undefined
+            assertParamExists('updateAward', 'restUpdateAward', restUpdateAward)
+            const localVarPath = `/award/update`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restUpdateAward, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * UpdateAwardApi - functional programming interface
+ * @export
+ */
+export const UpdateAwardApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = UpdateAwardApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateAward} restUpdateAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateAward(restUpdateAward: RestUpdateAward, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseUpdateAward>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateAward(restUpdateAward, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * UpdateAwardApi - factory interface
+ * @export
+ */
+export const UpdateAwardApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = UpdateAwardApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateAward} restUpdateAward 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateAward(restUpdateAward: RestUpdateAward, options?: any): AxiosPromise<ResponseUpdateAward> {
+            return localVarFp.updateAward(restUpdateAward, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * UpdateAwardApi - object-oriented interface
+ * @export
+ * @class UpdateAwardApi
+ * @extends {BaseAPI}
+ */
+export class UpdateAwardApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestUpdateAward} restUpdateAward 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UpdateAwardApi
+     */
+    public updateAward(restUpdateAward: RestUpdateAward, options?: AxiosRequestConfig) {
+        return UpdateAwardApiFp(this.configuration).updateAward(restUpdateAward, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * UpdateGroupApi - axios parameter creator
+ * @export
+ */
+export const UpdateGroupApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestUpdateGroup} restUpdateGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateGroup: async (restUpdateGroup: RestUpdateGroup, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restUpdateGroup' is not null or undefined
+            assertParamExists('updateGroup', 'restUpdateGroup', restUpdateGroup)
+            const localVarPath = `/group/update`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restUpdateGroup, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * UpdateGroupApi - functional programming interface
+ * @export
+ */
+export const UpdateGroupApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = UpdateGroupApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateGroup} restUpdateGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateGroup(restUpdateGroup: RestUpdateGroup, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseUpdateGroup>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateGroup(restUpdateGroup, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * UpdateGroupApi - factory interface
+ * @export
+ */
+export const UpdateGroupApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = UpdateGroupApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateGroup} restUpdateGroup 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateGroup(restUpdateGroup: RestUpdateGroup, options?: any): AxiosPromise<ResponseUpdateGroup> {
+            return localVarFp.updateGroup(restUpdateGroup, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * UpdateGroupApi - object-oriented interface
+ * @export
+ * @class UpdateGroupApi
+ * @extends {BaseAPI}
+ */
+export class UpdateGroupApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestUpdateGroup} restUpdateGroup 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UpdateGroupApi
+     */
+    public updateGroup(restUpdateGroup: RestUpdateGroup, options?: AxiosRequestConfig) {
+        return UpdateGroupApiFp(this.configuration).updateGroup(restUpdateGroup, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * UpdateUserApi - axios parameter creator
+ * @export
+ */
+export const UpdateUserApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {RestUpdateUser} restUpdateUser 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateUser: async (restUpdateUser: RestUpdateUser, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'restUpdateUser' is not null or undefined
+            assertParamExists('updateUser', 'restUpdateUser', restUpdateUser)
+            const localVarPath = `/user/update`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(restUpdateUser, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * UpdateUserApi - functional programming interface
+ * @export
+ */
+export const UpdateUserApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = UpdateUserApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateUser} restUpdateUser 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateUser(restUpdateUser: RestUpdateUser, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseUpdateUser>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateUser(restUpdateUser, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * UpdateUserApi - factory interface
+ * @export
+ */
+export const UpdateUserApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = UpdateUserApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {RestUpdateUser} restUpdateUser 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateUser(restUpdateUser: RestUpdateUser, options?: any): AxiosPromise<ResponseUpdateUser> {
+            return localVarFp.updateUser(restUpdateUser, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * UpdateUserApi - object-oriented interface
+ * @export
+ * @class UpdateUserApi
+ * @extends {BaseAPI}
+ */
+export class UpdateUserApi extends BaseAPI {
+    /**
+     * 
+     * @param {RestUpdateUser} restUpdateUser 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UpdateUserApi
+     */
+    public updateUser(restUpdateUser: RestUpdateUser, options?: AxiosRequestConfig) {
+        return UpdateUserApiFp(this.configuration).updateUser(restUpdateUser, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

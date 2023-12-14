@@ -6,6 +6,6 @@ export const userInfoAtom = atom<ResponseGetUserData>({
   firstName: '',
   lastName: '',
   email: '',
-  groupId: '',
+  groupId: null,
   role: '',
 });

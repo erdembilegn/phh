@@ -13,53 +13,61 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Colors } from '@libs/colors';
-import { RankModalText } from '@libs/text';
-import { RankModalProps } from '../model';
 
-const RankModal: React.FC<RankModalProps> = (props) => {
-  const { isOpen, onClose, register, handleSubmit, onSubmit, isLoading } = props;
+import { AssessmentModalProps } from '../../../../model';
+import { AssessmentModalText } from '@libs/text';
+
+const AssessmentModal: React.FC<AssessmentModalProps> = (props) => {
+  const {
+    isAssessmentOpen,
+    onAssessmentClose,
+    registerAssessment,
+    handleAssessmentSubmit,
+    onAssessmentSubmit,
+    isAssessmentLoading,
+  } = props;
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <Modal isOpen={isAssessmentOpen} onClose={onAssessmentClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
             <Heading size={'md'} color={Colors.primary}>
-              {RankModalText.createRank}
+              {AssessmentModalText.createAssessment}
             </Heading>
           </ModalHeader>
           <ModalCloseButton color={Colors.primary} />
           <ModalBody>
-            <form onSubmit={handleSubmit(onSubmit)} className="gap-y-2 flex flex-col">
+            <form
+              onSubmit={handleAssessmentSubmit(onAssessmentSubmit)}
+              className="gap-y-2 flex flex-col"
+            >
               <Grid templateColumns={'repeat(2,1fr)'} alignItems={'center'}>
-                <Text color={Colors.primary}>{RankModalText.rankName}</Text>
+                <Text color={Colors.primary}>{AssessmentModalText.AssessmentName}</Text>
                 <Input
-                  {...register('name', { required: true })}
+                  {...registerAssessment('name', { required: true })}
                   borderColor={Colors.primary}
-                  placeholder={RankModalText.rankNamePlaceHolder}
+                  placeholder={AssessmentModalText.assessmentNamePlaceHolder}
                 />
               </Grid>
-              <Grid templateColumns={'repeat(2,1fr)'} alignItems={'center'}>
-                <Text color={Colors.primary}>{RankModalText.image}</Text>
-                <Input {...register('image')} borderColor={Colors.primary} type="file" />
-              </Grid>
+
               <Flex w="full" justifyContent={'space-evenly'} marginY={'20px'}>
                 <Button
-                  onClick={onClose}
+                  onClick={onAssessmentClose}
                   variant={'outline'}
                   color={Colors.primary}
                   borderColor={Colors.primary}
                 >
-                  {RankModalText.cancel}
+                  {AssessmentModalText.cancel}
                 </Button>
                 <Button
-                  onSubmit={handleSubmit(onSubmit)}
+                  onSubmit={handleAssessmentSubmit(onAssessmentSubmit)}
                   type="submit"
                   backgroundColor={Colors.primary}
                   color={'white'}
-                  isLoading={isLoading}
+                  isLoading={isAssessmentLoading}
                 >
-                  {RankModalText.create}
+                  {AssessmentModalText.create}
                 </Button>
               </Flex>
             </form>
@@ -70,4 +78,4 @@ const RankModal: React.FC<RankModalProps> = (props) => {
   );
 };
 
-export default RankModal;
+export default AssessmentModal;

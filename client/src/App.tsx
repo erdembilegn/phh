@@ -7,6 +7,8 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import HomeContainer from './pages/Home/HomeContainer';
 import LoginContainer from './pages/Login/LoginContainer';
+import LeaderboardContainer from './pages/Home/LeaderboardContainer';
+import GamificationContainer from './pages/Home/GamificationContainer';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -27,6 +29,25 @@ const App: React.FC = () => {
             <>
               <Header />
               <HomeContainer />
+            </>
+          }
+        />
+
+        <Route
+          path="/gamification"
+          element={
+            <>
+              <Header />
+              <GamificationContainer />
+            </>
+          }
+        />
+        <Route
+          path="/leaderboard"
+          element={
+            <>
+              <Header />
+              <LeaderboardContainer />
             </>
           }
         />

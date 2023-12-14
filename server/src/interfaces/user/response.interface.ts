@@ -14,22 +14,22 @@ export interface ResponseGetUser {
     firstName: string;
     lastName: string;
     email: string;
-    groupId: string;
+    groupId: string | null;
     role: string;
   };
 }
 
-export interface ResponseGetAllUser {
-  error?: GenericError;
-  data?:
-    | {
-        id: string;
-        firstName: string;
-        lastName: string;
-        email: string;
-      }[]
-    | null;
-}
+// export interface ResponseGetAllUser {
+//   error?: GenericError;
+//   data?:
+//     | {
+//         id: string;
+//         firstName: string;
+//         lastName: string;
+//         email: string;
+//       }[]
+//     | null;
+// }
 
 export interface ResponseGetUserById {
   error?: GenericError;
@@ -38,7 +38,43 @@ export interface ResponseGetUserById {
     firstName: string;
     lastName: string;
     email: string;
-    groupId: string;
+    groupId: string | null;
+    role: string;
+  };
+}
+
+export interface ResponseGetUserByRoleGroup {
+  error?: GenericError;
+  data?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    groupId: string | null;
+    role: string;
+  }[];
+}
+
+export interface ResponseGetAllUser {
+  error?: GenericError;
+  data?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    groupId: string | null;
+    role: string;
+  }[];
+}
+
+export interface ResponseUpdateUser {
+  error?: GenericError;
+  data?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    groupId: string | null;
     role: string;
   };
 }

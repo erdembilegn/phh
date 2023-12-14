@@ -40,27 +40,45 @@ const Header = () => {
     <Grid templateColumns={'repeat(3, 1fr)'} bg={'white'}>
       <Flex alignItems="center" w="50%" justify="center" gap="4">
         <Image w={'24px'} h={'26px'} src={logo} />
-        <Heading fontWeight={800} fontSize={24} color={Colors.primary}>
+        <Heading fontWeight={600} fontSize={17} color={Colors.primary}>
           {headerText.title}
         </Heading>
       </Flex>
       <Flex gap="4" alignItems="center">
         <Link to="/">
           <Text
-            fontSize={24}
+            fontSize={18}
             fontWeight={location.pathname === '/' ? 600 : 0}
             color={Colors.primary}
           >
             {userInfo.role === 'admin' || userInfo.role === 'Admin'
-              ? headerText.rewardList
+              ? headerText.groupList
               : userInfo.role === 'student' || userInfo.role === 'Student'
               ? headerText.rank
               : headerText.evaluate}
           </Text>
         </Link>
-        <Text fontSize={24} color={Colors.primary}>
-          {headerText.rating}
-        </Text>
+        {userInfo.role === 'admin' ||
+          (userInfo.role === 'Admin' && (
+            <Link to="/gamification">
+              <Text
+                fontSize={18}
+                color={Colors.primary}
+                fontWeight={location.pathname === '/gamification' ? 600 : 0}
+              >
+                {headerText.rewardList}
+              </Text>
+            </Link>
+          ))}
+        <Link to="/leaderboard">
+          <Text
+            fontSize={18}
+            color={Colors.primary}
+            fontWeight={location.pathname === '/leaderboard' ? 600 : 0}
+          >
+            {headerText.rating}
+          </Text>
+        </Link>
       </Flex>
       <Flex w="95%" direction="row-reverse">
         <Menu>

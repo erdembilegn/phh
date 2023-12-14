@@ -1,5 +1,6 @@
 import * as express from "express";
 import * as jwt from "jsonwebtoken";
+import { CLIENT_RENEG_LIMIT } from "tls";
 
 export function expressAuthentication(
   request: express.Request,
@@ -8,9 +9,15 @@ export function expressAuthentication(
 ): Promise<any> {
   if (securityName === "jwt") {
     let token : string | undefined;
+    // console.log(request.headers)
     if(request.headers.authorization){
       token = request.headers.authorization
     }
+    else if(request.headers.cookie){
+      const test = request.headers.cookie
+      token = test.split('token=')[1]
+    }
+    console.log(token)
     return new Promise((resolve, reject) => {
       if (!token) {
         reject(new Error("No token provided"));

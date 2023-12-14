@@ -1,8 +1,8 @@
 export enum RankModalText {
   createRank = 'Цол үүсгэх',
-  rankName = 'Цолын нэр: ',
+  rankName = 'Цолны нэр: ',
   image = 'Зураг: ',
   cancel = 'Хаах',
   create = 'Үүсгэх',
-  rankNamePlaceHolder = 'Цолын нэрээ оруулна уу',
+  rankNamePlaceHolder = 'Цолны нэрийг оруулна уу',
 }

@@ -18,8 +18,6 @@ export const useUserInfo = () => {
         userInfo.lastName.length === 0 ||
         userInfo.email === null ||
         userInfo.email.length === 0 ||
-        userInfo.groupId.length === 0 ||
-        userInfo.groupId === null ||
         userInfo.role === null ||
         userInfo.role.length === 0) &&
       token

@@ -29,7 +29,7 @@
       "@utils/functions": ["src/utils/functions/index.ts"],
       "@utils/const": ["src/utils/const/index.ts"]
     }
-    },
+  },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

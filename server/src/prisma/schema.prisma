@@ -16,17 +16,89 @@ model User {
   firstName String
   lastName  String
   password  String
-  groupId   String
+  groupId   String?
   role      String
+  group     Group?    @relation(fields: [groupId], references: [id])
+  grades    Grade[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
+model Group {
+  id            String         @id @unique @default(uuid())
+  name          String
+  users         User[]
+  gamifications Gamification[]
+  createdUser   String
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
 model Award {
-  id          String   @id @unique @default(uuid())
-  name        String
-  createdUser String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  image       String
+  id            String              @id @unique @default(uuid())
+  name          String
+  createdUser   String
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  image         String
+  gamifications GamificationAward[]
+}
+
+model Assessment {
+  id             String                   @id @unique @default(uuid())
+  assessmentName String
+  createdUser    String
+  gamifications  GamificationAssessment[]
+  grades         Grade[]
+  createdAt      DateTime                 @default(now())
+  updatedAt      DateTime                 @updatedAt
+}
+
+model GamificationAward {
+  id                 String       @id @unique @default(uuid())
+  awardId            String
+  gamificationId     String
+  awardMinPercentage Float
+  awardMaxPercentage Float
+  gamification       Gamification @relation(fields: [gamificationId], references: [id])
+  award              Award        @relation(fields: [awardId], references: [id])
+
+  @@index([gamificationId, awardId], name: "unique_gamification_award")
+}
+
+model Gamification {
+  id                    String                   @id @unique @default(uuid())
+  gamificationName      String
+  gamificationStartDate DateTime
+  gamificationEndDate   DateTime
+  groupId               String
+  group                 Group                    @relation(fields: [groupId], references: [id])
+  awards                GamificationAward[]
+  assessments           GamificationAssessment[]
+  grades                Grade[]
+  createdUser           String
+  createdAt             DateTime                 @default(now())
+  updatedAt             DateTime                 @updatedAt
+}
+
+model GamificationAssessment {
+  id                   String       @id @unique @default(uuid())
+  assessmentId         String
+  gamificationId       String
+  assessmentPercentage Float
+  gamification         Gamification @relation(fields: [gamificationId], references: [id])
+  assessment           Assessment   @relation(fields: [assessmentId], references: [id])
+
+  @@index([gamificationId, assessmentId], name: "unique_gamification_assessment")
+}
+
+model Grade {
+  id             String       @id @unique @default(uuid())
+  gradeNumber    Float
+  user           User         @relation(fields: [userId], references: [id])
+  userId         String
+  assessment     Assessment   @relation(fields: [assessmentId], references: [id])
+  assessmentId   String
+  gamification   Gamification @relation(fields: [gamificationId], references: [id])
+  gamificationId String
 }
