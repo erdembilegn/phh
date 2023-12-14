@@ -5,13 +5,14 @@ import { useFetchGamification, useFetchUser } from '@libs/hooks';
 import TeacherAssessmentTable from './TeacherAssessment';
 import { userInfoAtom } from '@libs/jotai';
 import { useAtom } from 'jotai';
+import { isPast } from 'date-fns';
 
 const AssessmentList: React.FC = () => {
   const [onlyUser] = useAtom(userInfoAtom);
 
 
   const { gamifications } = useFetchGamification();
-  const gam = gamifications?.filter((gami) => gami.groupId === onlyUser.groupId);
+  const gam = gamifications?.filter((gami) => gami.groupId === onlyUser.groupId  && (!isPast(new Date(gami.gamificationEndDate))));
 
 
   const [selectedGamificationId, setSelectedGamificationId] = useState<string | undefined | null>(

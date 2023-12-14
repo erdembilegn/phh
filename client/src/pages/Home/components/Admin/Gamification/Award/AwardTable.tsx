@@ -13,9 +13,12 @@ import { RankForm } from 'src/pages/Home/model';
 import { CloudinaryEnv } from '@utils/const';
 import axios from 'axios';
 import { UpdateAwardApi } from '@utils/api';
+import { useAtom } from 'jotai';
+import { userInfoAtom } from '@libs/jotai';
 
 const AwardTable: React.FC = () => {
   const { users } = useFetchUser();
+  const [userInfo] = useAtom(userInfoAtom);
   const { refetch, awards } = useFetchAward();
   const toast = useToast({ position: 'top' });
   const [awardId, setAwardId] = useState<string>('')
@@ -51,6 +54,7 @@ const AwardTable: React.FC = () => {
               id: awardId,
               name: data.name,
               image: res.data.url,
+              createdUser : userInfo.id,
             })
             .then((res) => {
               if (res.data) {

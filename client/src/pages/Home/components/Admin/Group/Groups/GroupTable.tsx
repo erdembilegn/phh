@@ -10,9 +10,12 @@ import { GroupForm } from 'src/pages/Home/model';
 import GroupUpdateModal from './GroupUpdateModal';
 import GroupDeleteModal from './GroupDeleteModal';
 import { UpdateGroupApi } from '@utils/api';
+import { userInfoAtom } from '@libs/jotai';
+import { useAtom } from 'jotai';
 
 const GroupTable: React.FC = () => {
   const { users } = useFetchUser();
+  const [userInfo] = useAtom(userInfoAtom);
   const { refetch, groups } = useFetchGroup();
   const toast = useToast({ position: 'top' });
   const [groupId, setGroupId] = useState<string>('')
@@ -38,6 +41,7 @@ const GroupTable: React.FC = () => {
       .updateGroup({
         id: groupId,
         name: data.name,
+        createdUser : userInfo.id,
       })
       .then((res) => {
         if (res.data) {

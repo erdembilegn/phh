@@ -12,6 +12,18 @@ const prisma = new PrismaClient();
 export class GroupService {
   async createGroup(data: RestCreateGroup): Promise<ResponseCreateGroup> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: data.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin'){
+        throw new Error("Only admin can create group");
+      }
       const createdGroup = await prisma.group.create({
         data: {
           name: data.name,
@@ -134,6 +146,18 @@ export class GroupService {
   }
   public async updateGroup(req: RestUpdateGroup): Promise<ResponseUpdateGroup> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin') {
+        throw new Error("Only admin can update group");
+      }
       const existingGroup = await prisma.group.findFirst({
         where: {
           id: req.id
@@ -197,6 +221,18 @@ export class GroupService {
 
   public async deleteGroup(req: RestDeleteGroup) {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin') {
+        throw new Error("Only admin can delete group");
+      }
       const existingGroup = await prisma.group.findFirst({
         where: {
           id: req.id,

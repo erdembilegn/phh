@@ -7,6 +7,19 @@ const prisma = new PrismaClient();
 export class AssessmentService {
   public async createAssessment(req: RestCreateAssessment): Promise<ResponseCreateAssessment> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin') {
+        throw new Error("Only admin can create assessment");
+      }
+
       const data = await prisma.assessment.create({
         data: {
           assessmentName: req.assessmentName,
@@ -65,6 +78,18 @@ export class AssessmentService {
   }
   public async updateAssessment(req: RestUpdateAssessment): Promise<ResponseUpdateAssessment> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin'){
+        throw new Error("Only admin can update assessment");
+      }
       const existingAssessment = await prisma.assessment.findFirst({
         where: {
           id: req.id
@@ -122,6 +147,18 @@ export class AssessmentService {
 
   public async deleteAssessment(req: RestDeleteAssessment) {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin') {
+        throw new Error("Only admin can delete assessment");
+      }
       const existingAssessment = await prisma.assessment.findFirst({
         where: {
           id: req.id,

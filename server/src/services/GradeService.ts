@@ -5,35 +5,41 @@ import { RestCreateGrade } from '../interfaces/grade/rest.interface';
 const prisma = new PrismaClient();
 
 export class GradeService {
-  public async createGrade(req: RestCreateGrade[]): Promise<ResponseCreateGrade[]> {
+  public async createGrade(req: RestCreateGrade): Promise<ResponseCreateGrade> {
     try {
-      const createdGrades: ResponseCreateGrade[] = [];
 
-    for (const grade of req) {
-      const data = await prisma.grade.create({
-        data: {
-          userId: grade.userId,
-          assessmentId: grade.assessmentId,
-          gamificationId: grade.gamificationId,
-          gradeNumber: grade.gradeNumber,
-        },
-      });
+      let data = req.user.map(async (grade) => {
+        return await prisma.grade.create({
+          data: {
+            userId: grade.userId,
+            assessmentId: req.assessmentId,
+            gamificationId: req.assessmentId,
+            gradeNumber: grade.gradeNumber,
+            createdUser: req.createdUser,
+          }
+        })
+      })
 
-      createdGrades.push({
+
+      const ids = await Promise.all(data.map((ids) => {
+        return ids.then((res) => {
+          return res.id;
+        });
+      }));
+
+      return {
         data: {
-          id: data.id,
+          id: ids
+        }
+      };
+
+    } catch (error) {
+      return {
+        error: {
+          message: (error as Error).message,
         },
-      });
+      };
     }
-
-    return createdGrades;
-  } catch (error) {
-    return req.map(() => ({
-      error: {
-        message: (error as Error).message,
-      },
-    }));
-  }
   }
 
   public async getGrade(): Promise<ResponseGetGrade> {

@@ -11,7 +11,9 @@ export interface RestUpdateAward {
   id : string;
   name?: string;
   image?: string;
+  createdUser: string;
 }
 export interface RestDeleteAward {
   id : string;
+  createdUser: string;
 }

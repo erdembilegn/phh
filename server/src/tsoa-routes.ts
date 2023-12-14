@@ -71,6 +71,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "id": {"dataType":"string","required":true},
             "assessmentName": {"dataType":"string"},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -79,6 +80,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "id": {"dataType":"string","required":true},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -135,6 +137,7 @@ const models: TsoaRoute.Models = {
             "id": {"dataType":"string","required":true},
             "name": {"dataType":"string"},
             "image": {"dataType":"string"},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -143,6 +146,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "id": {"dataType":"string","required":true},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -183,7 +187,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "error": {"ref":"GenericError"},
-            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"id":{"dataType":"string","required":true}}},
+            "data": {"dataType":"nestedObjectLiteral","nestedProperties":{"id":{"dataType":"array","array":{"dataType":"string"},"required":true}}},
         },
         "additionalProperties": false,
     },
@@ -191,10 +195,10 @@ const models: TsoaRoute.Models = {
     "RestCreateGrade": {
         "dataType": "refObject",
         "properties": {
-            "userId": {"dataType":"string","required":true},
             "assessmentId": {"dataType":"string","required":true},
             "gamificationId": {"dataType":"string","required":true},
-            "gradeNumber": {"dataType":"double","required":true},
+            "user": {"dataType":"array","array":{"dataType":"nestedObjectLiteral","nestedProperties":{"gradeNumber":{"dataType":"double","required":true},"userId":{"dataType":"string","required":true}}},"required":true},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -203,7 +207,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "error": {"ref":"GenericError"},
-            "data": {"dataType":"array","array":{"dataType":"nestedObjectLiteral","nestedProperties":{"gradeNumber":{"dataType":"double","required":true},"gamificationId":{"dataType":"string","required":true},"assessmentId":{"dataType":"string","required":true},"userId":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}}},
+            "data": {"dataType":"array","array":{"dataType":"nestedObjectLiteral","nestedProperties":{"updatedAt":{"dataType":"datetime","required":true},"createdAt":{"dataType":"datetime","required":true},"createdUser":{"dataType":"string","required":true},"gamificationId":{"dataType":"string","required":true},"assessmentId":{"dataType":"string","required":true},"gradeNumber":{"dataType":"double","required":true},"userId":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}}}},
         },
         "additionalProperties": false,
     },
@@ -258,6 +262,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "id": {"dataType":"string","required":true},
             "name": {"dataType":"string"},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -266,6 +271,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "id": {"dataType":"string","required":true},
+            "createdUser": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -670,7 +676,7 @@ export function RegisterRoutes(app: Router) {
 
             function GradeController_createGrade(request: any, response: any, next: any) {
             const args = {
-                    req: {"in":"body","name":"req","required":true,"dataType":"array","array":{"dataType":"refObject","ref":"RestCreateGrade"}},
+                    req: {"in":"body","name":"req","required":true,"ref":"RestCreateGrade"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

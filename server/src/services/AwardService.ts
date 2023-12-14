@@ -7,6 +7,19 @@ const prisma = new PrismaClient();
 export class AwardService {
   public async createAward(req: RestCreateAward): Promise<ResponseCreateAward> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin'){
+        throw new Error("Only admin can create award");
+      }
+
       const data = await prisma.award.create({
         data: {
           name: req.name,
@@ -98,6 +111,18 @@ export class AwardService {
   
   public async updateAward(req: RestUpdateAward): Promise<ResponseUpdateAward> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin') {
+        throw new Error("Only admin can update award");
+      }
       const existingAward = await prisma.award.findFirst({
         where: {
           id : req.id
@@ -136,6 +161,18 @@ export class AwardService {
 
   public async deleteAward(req: RestDeleteAward) {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin'){
+        throw new Error("Only admin can delete award");
+      }
       const existingAward = await prisma.award.findFirst({
         where: {
           id: req.id,

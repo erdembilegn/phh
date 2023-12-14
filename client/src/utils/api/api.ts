@@ -558,10 +558,23 @@ export interface ResponseCreateGrade {
     'error'?: GenericError;
     /**
      * 
-     * @type {ResponseCreateAssessmentData}
+     * @type {ResponseCreateGradeData}
      * @memberof ResponseCreateGrade
      */
-    'data'?: ResponseCreateAssessmentData;
+    'data'?: ResponseCreateGradeData;
+}
+/**
+ * 
+ * @export
+ * @interface ResponseCreateGradeData
+ */
+export interface ResponseCreateGradeData {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ResponseCreateGradeData
+     */
+    'id': Array<string>;
 }
 /**
  * 
@@ -945,10 +958,22 @@ export interface ResponseGetGrade {
 export interface ResponseGetGradeDataInner {
     /**
      * 
-     * @type {number}
+     * @type {string}
      * @memberof ResponseGetGradeDataInner
      */
-    'gradeNumber': number;
+    'updatedAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'createdAt': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'createdUser': string;
     /**
      * 
      * @type {string}
@@ -961,6 +986,12 @@ export interface ResponseGetGradeDataInner {
      * @memberof ResponseGetGradeDataInner
      */
     'assessmentId': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ResponseGetGradeDataInner
+     */
+    'gradeNumber': number;
     /**
      * 
      * @type {string}
@@ -1392,12 +1423,6 @@ export interface RestCreateGrade {
      * @type {string}
      * @memberof RestCreateGrade
      */
-    'userId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof RestCreateGrade
-     */
     'assessmentId': string;
     /**
      * 
@@ -1407,10 +1432,35 @@ export interface RestCreateGrade {
     'gamificationId': string;
     /**
      * 
-     * @type {number}
+     * @type {Array<RestCreateGradeUserInner>}
      * @memberof RestCreateGrade
      */
+    'user': Array<RestCreateGradeUserInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGrade
+     */
+    'createdUser': string;
+}
+/**
+ * 
+ * @export
+ * @interface RestCreateGradeUserInner
+ */
+export interface RestCreateGradeUserInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof RestCreateGradeUserInner
+     */
     'gradeNumber': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestCreateGradeUserInner
+     */
+    'userId': string;
 }
 /**
  * 
@@ -1488,6 +1538,12 @@ export interface RestDeleteAssessment {
      * @memberof RestDeleteAssessment
      */
     'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteAssessment
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -1501,6 +1557,12 @@ export interface RestDeleteAward {
      * @memberof RestDeleteAward
      */
     'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteAward
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -1514,6 +1576,12 @@ export interface RestDeleteGroup {
      * @memberof RestDeleteGroup
      */
     'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestDeleteGroup
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -1584,6 +1652,12 @@ export interface RestUpdateAssessment {
      * @memberof RestUpdateAssessment
      */
     'assessmentName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAssessment
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -1609,6 +1683,12 @@ export interface RestUpdateAward {
      * @memberof RestUpdateAward
      */
     'image'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateAward
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -1628,6 +1708,12 @@ export interface RestUpdateGroup {
      * @memberof RestUpdateGroup
      */
     'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RestUpdateGroup
+     */
+    'createdUser': string;
 }
 /**
  * 
@@ -2016,11 +2102,11 @@ export const CreateGradeApiAxiosParamCreator = function (configuration?: Configu
     return {
         /**
          * 
-         * @param {Array<RestCreateGrade>} restCreateGrade 
+         * @param {RestCreateGrade} restCreateGrade 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createGrade: async (restCreateGrade: Array<RestCreateGrade>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createGrade: async (restCreateGrade: RestCreateGrade, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'restCreateGrade' is not null or undefined
             assertParamExists('createGrade', 'restCreateGrade', restCreateGrade)
             const localVarPath = `/grade/create`;
@@ -2061,11 +2147,11 @@ export const CreateGradeApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @param {Array<RestCreateGrade>} restCreateGrade 
+         * @param {RestCreateGrade} restCreateGrade 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createGrade(restCreateGrade: Array<RestCreateGrade>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResponseCreateGrade>>> {
+        async createGrade(restCreateGrade: RestCreateGrade, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResponseCreateGrade>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createGrade(restCreateGrade, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -2081,11 +2167,11 @@ export const CreateGradeApiFactory = function (configuration?: Configuration, ba
     return {
         /**
          * 
-         * @param {Array<RestCreateGrade>} restCreateGrade 
+         * @param {RestCreateGrade} restCreateGrade 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createGrade(restCreateGrade: Array<RestCreateGrade>, options?: any): AxiosPromise<Array<ResponseCreateGrade>> {
+        createGrade(restCreateGrade: RestCreateGrade, options?: any): AxiosPromise<ResponseCreateGrade> {
             return localVarFp.createGrade(restCreateGrade, options).then((request) => request(axios, basePath));
         },
     };
@@ -2100,12 +2186,12 @@ export const CreateGradeApiFactory = function (configuration?: Configuration, ba
 export class CreateGradeApi extends BaseAPI {
     /**
      * 
-     * @param {Array<RestCreateGrade>} restCreateGrade 
+     * @param {RestCreateGrade} restCreateGrade 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CreateGradeApi
      */
-    public createGrade(restCreateGrade: Array<RestCreateGrade>, options?: AxiosRequestConfig) {
+    public createGrade(restCreateGrade: RestCreateGrade, options?: AxiosRequestConfig) {
         return CreateGradeApiFp(this.configuration).createGrade(restCreateGrade, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -3300,7 +3386,6 @@ export const GetGamificationApiFactory = function (configuration?: Configuration
  * @extends {BaseAPI}
  */
 export class GetGamificationApi extends BaseAPI {
-    static getGamification: any;
     /**
      * 
      * @param {*} [options] Override http request option.

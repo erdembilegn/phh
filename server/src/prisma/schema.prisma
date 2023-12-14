@@ -18,7 +18,7 @@ model User {
   password  String
   groupId   String?
   role      String
-  group     Group?    @relation(fields: [groupId], references: [id])
+  group     Group?   @relation(fields: [groupId], references: [id])
   grades    Grade[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -101,4 +101,7 @@ model Grade {
   assessmentId   String
   gamification   Gamification @relation(fields: [gamificationId], references: [id])
   gamificationId String
+  createdUser    String
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
 }

@@ -116,6 +116,7 @@ export interface GradeForm {
     userId: string;
     gamificationId: string;
     assessmentId: string;
+    createdUser: string;
   }[];
 }
 

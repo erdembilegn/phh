@@ -7,10 +7,11 @@ import { GradeService } from '../services/GradeService';
 export class GradeController extends Controller {
   @Post('/create')
   @Tags('CreateGrade')
-  public async createGrade(@Body() req: RestCreateGrade[]): Promise<ResponseCreateGrade[]> {
+  public async createGrade(@Body() req: RestCreateGrade): Promise<ResponseCreateGrade> {
+    console.log(req);
     const data = await new GradeService().createGrade(req);
-    if (data.some((item) => item.error)) {
-      this.setStatus(400);
+    if(data.error){
+      this.setStatus(500)
       return data;
     }
     this.setStatus(201);

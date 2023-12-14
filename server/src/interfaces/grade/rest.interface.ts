@@ -1,12 +1,15 @@
 export interface RestCreateGrade {
-    userId : string,
-    assessmentId : string,
-    gamificationId : string,
-    gradeNumber : number,
+    assessmentId: string,
+    gamificationId: string,
+    user:{
+        userId: string,
+        gradeNumber: number,
+    }[],
+    createdUser: string;
 };
 
 export interface RestGetGrade {
-    userId : string,
-    assessmentId : string,
-    gamificationId : string,
+    userId: string,
+    assessmentId: string,
+    gamificationId: string,
 };

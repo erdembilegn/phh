@@ -12,11 +12,12 @@ import {
 } from '@chakra-ui/react';
 import { useFetchAssessment, useFetchGamification, useFetchGrade } from '@libs/hooks';
 import GradeModal from './GradeModal';
-
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { GradeForm } from '../../model';
 import { Colors } from '@libs/colors';
 import { CreateGradeApi } from '@utils/api';
+import { userInfoAtom } from '@libs/jotai';
+import { useAtom } from 'jotai';
 
 interface TeacherAssessmentTableProps {
   selectedGamificationId: string | null | undefined;
@@ -30,6 +31,7 @@ interface IDS {
 const TeacherAssessmentTable: React.FC<TeacherAssessmentTableProps> = ({
   selectedGamificationId,
 }) => {
+  const [userInfo] = useAtom(userInfoAtom);
   const toast = useToast({ position: 'top' });
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { isOpen: isGradeOpen, onOpen: onGradeOpen, onClose: onGradeClose } = useDisclosure();
@@ -47,6 +49,7 @@ const TeacherAssessmentTable: React.FC<TeacherAssessmentTableProps> = ({
           assessmentId: '1',
           userId: '1',
           gamificationId: '1',
+          createdUser: '1',
         },
       ],
     },
@@ -77,41 +80,59 @@ const TeacherAssessmentTable: React.FC<TeacherAssessmentTableProps> = ({
 
   const { refetch } = useFetchGrade();
   const onGradeSubmit: SubmitHandler<GradeForm> = async (data) => {
-    console.log('d');
 
-    data.values.map((item) =>
-      new CreateGradeApi()
-        .createGrade([
-          {
-            gradeNumber: item.gradeNumber,
-            gamificationId: item.gamificationId,
-            userId: item.userId,
-            assessmentId: item.assessmentId,
-          },
-        ])
-        .then((res) => {
-          if (res.data) {
-            toast({
-              status: 'success',
-              title: 'Амжилттай үүслээ',
-              isClosable: true,
-            });
-            onGradeClose();
-            refetch();
-          }
+    new CreateGradeApi().createGrade(
+      {
+        assessmentId: data.values.at(1)?.assessmentId ?? '',
+        createdUser: userInfo.id ,
+        gamificationId: data.values.at(1)?.gamificationId ?? "",
+        user: data.values.map((user) => {
+          return {
+            userId: user.userId,
+            gradeNumber: user.gradeNumber
+          };
         })
-        .catch((err) => {
-          toast({
-            status: 'error',
-            title: 'something went wrong',
-            description: err.message,
-            isClosable: true,
-          });
-        })
-        .finally(() => {
-          setIsLoading(false);
-        }),
-    );
+      }
+    )
+
+    // data.values.map((item) =>
+    //   new CreateGradeApi()
+    //     .createGrade({
+    //       assessmentId: item.assessmentId,
+    //       createdUser: item.createdUser,
+    //       gamificationId: item.gamificationId,
+    //       user: [
+    //         {
+    //           gradeNumber: item.gradeNumber,
+    //           userId: item.userId
+    //         }
+    //       ]
+    //     })
+    //     .then((res) => {
+    //       if (res.data) {
+    //         toast({
+    //           status: 'success',
+    //           title: 'Амжилттай үүслээ',
+    //           isClosable: true,
+    //         });
+    //         onGradeClose();
+    //         refetch();
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       toast({
+    //         status: 'error',
+    //         title: 'something went wrong',
+    //         description: err.message,
+    //         isClosable: true,
+    //       });
+    //     })
+    //     .finally(() => {
+    //       setIsLoading(false);
+    //     }),
+    // );
+
+    
   };
 
   return (

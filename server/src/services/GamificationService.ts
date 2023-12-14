@@ -7,9 +7,22 @@ const prisma = new PrismaClient();
 export class GamificationService {
   public async createGamification(req: RestCreateGamification): Promise<ResponseCreateGamification> {
     try {
+      const user = await prisma.user.findUnique({
+        where: {
+          id: req.createdUser
+        },
+        select: {
+          role: true,
+        },
+      });
+
+      if (user?.role !== 'Admin' && user?.role !== 'admin'){
+        throw new Error("Only admin can create gamification");
+      }
+
       const sumPercentage = req.assessments.map((assessment) => assessment.assessmentPercentage)
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-      if (sumPercentage > 50) throw new Error("sum must be <50");
+      if (sumPercentage > 100) throw new Error("sum must be <100");
       const data = await prisma.gamification.create({
         data: {
           gamificationName: req.gamificationName,

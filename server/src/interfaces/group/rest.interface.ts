@@ -6,8 +6,10 @@ export interface RestCreateGroup {
 export interface RestUpdateGroup {
   id: string;
   name?: string;
+  createdUser: string;
 }
 
 export interface RestDeleteGroup {
-  id : string;
+  id: string;
+  createdUser: string;
 }

@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Colors } from '@libs/colors';
 import { Flex, Grid, Select, Text } from '@chakra-ui/react';
-import { useFetchAward, useFetchAwardById, useFetchGamification } from '@libs/hooks';
+import { useFetchAwardById, useFetchGamification } from '@libs/hooks';
 import LeaderboardTable from './LeaderboardTable';
 import { userInfoAtom } from '@libs/jotai';
 import { useAtom } from 'jotai';
 import { RestCreateGamificationAwardsInner } from '@utils/api';
+import { isPast } from 'date-fns';
 
 const LeaderboardList: React.FC = () => {
   const { gamifications } = useFetchGamification();
-  const { awards } = useFetchAward();
   const [onlyUser] = useAtom(userInfoAtom);
-  const gam = gamifications?.filter((gami) => !onlyUser.groupId || gami.groupId === onlyUser.groupId);
+  const gam = gamifications?.filter((gami) => (!onlyUser.groupId || (gami.groupId === onlyUser.groupId)
+    && !isPast(new Date(gami.gamificationEndDate)))
+  );
+
   const [selectedGamificationId, setSelectedGamificationId] = useState<string | undefined | null>(
     null,
   );
@@ -36,7 +39,6 @@ const LeaderboardList: React.FC = () => {
   //   )
   //   .join(', ');
 
-
   return (
     <>
       <Grid templateColumns="1fr 1fr" gap={4}>
@@ -49,6 +51,7 @@ const LeaderboardList: React.FC = () => {
             paddingLeft="25px"
             width={'20%'}
             onChange={handleSelectChange}
+            defaultValue={gam?.[0]?.id}
           >
             {gam?.map((gamification, index) => (
               <option key={index} value={gamification.id}>
@@ -67,11 +70,11 @@ const LeaderboardList: React.FC = () => {
           fontSize={'15px'}
         >
           {gamificationNameString}
-          {' '}
+          {' урамшуулалд дараах цолнууд байна. Үүнд: '}
           {gamificationInfo?.awards
             ?.map<React.ReactNode>(
               (award) =>
-                (<AwardLabel award={award}/>)
+                (<AwardLabel award={award} />)
             )
             .reduce((prev, curr) => [prev, ', ', curr])}
         </Text>
@@ -80,12 +83,42 @@ const LeaderboardList: React.FC = () => {
     </>
 
   );
+
 };
+
+// const OngoingGamification = () =>
+// {
+//   const {gamifications} = useFetchGamification();
+//   const [onlyUser] = useAtom(userInfoAtom);
+//   const gam = gamifications?.filter((gami) => !onlyUser.groupId || gami.groupId === onlyUser.groupId);
+//   const isAdmin = onlyUser.role === 'Admin';
+//   const OngoingGamification =  gamifications?.filter((gami) => !isPast(new Date(gami.gamificationEndDate)));
+//   const [selectedGamificationId, setSelectedGamificationId] = useState<string | undefined | null>(
+//     null,
+//   );
+
+//   useEffect(() => {
+//     if (gam && gam.length > 0 && selectedGamificationId === null) {
+//       setSelectedGamificationId(gam[0]?.id);
+//     }
+//   }, [gam]);
+
+//   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//     setSelectedGamificationId(event.target.value);
+//   };
+
+//   if (isAdmin === true)
+//   {
+//     return <>
+//      <LeaderboardTable />
+//     </>
+//   }
+// }
 
 const AwardLabel = ({ award }: { award: RestCreateGamificationAwardsInner }) => {
   const a = useFetchAwardById(award.awardId).award?.name;
 
-  return <>{`${a} - ${award.awardMinPercentage} - ${award.awardMaxPercentage}%`}</>
+  return <>{`${a} - (${award.awardMinPercentage} - ${award.awardMaxPercentage}%)`}</>
 }
 
 export default LeaderboardList;

@@ -11,6 +11,8 @@ import { AssessmentForm } from 'src/pages/Home/model';
 import AssessmentUpdateModal from './AssessmentUpdateModal';
 import AssessmentDeleteModal from './AssessmentDeleteModal';
 import { UpdateAssessmentApi } from '@utils/api';
+import { useAtom } from 'jotai';
+import { userInfoAtom } from '@libs/jotai';
 
 
 let count = undefined;
@@ -19,6 +21,7 @@ let deactive = undefined;
 
 const AssessmentTable: React.FC = () => {
   const { users } = useFetchUser();
+  const [userInfo] = useAtom(userInfoAtom);
   const { refetch, assessments } = useFetchAssessment();
   const toast = useToast({ position: 'top' });
   const [assessmentId, setAssessmentId] = useState<string>('')
@@ -26,13 +29,13 @@ const AssessmentTable: React.FC = () => {
   const [isAssessmentDeleteLoading] = useState<boolean>(false);
   const { isOpen: isAssessmentUpdateOpen, onOpen: onAssessmentUpdateOpen, onClose: onAssessmentUpdateClose } = useDisclosure();
   const { isOpen: isAssessmentDeleteOpen, onOpen: onAssessmentDeleteOpen, onClose: onAssessmentDeleteClose } = useDisclosure();
-  const handleAssessmentUpdateOpen = (clickedAwardId: string) => {
-    setAssessmentId(clickedAwardId);
+  const handleAssessmentUpdateOpen = (clickedAssessmentId: string) => {
+    setAssessmentId(clickedAssessmentId);
     onAssessmentUpdateOpen();
   };
 
-  const handleAssessmentDeleteOpen = (clickedAwardId: string) => {
-    setAssessmentId(clickedAwardId);
+  const handleAssessmentDeleteOpen = (clickedAssessmentId: string) => {
+    setAssessmentId(clickedAssessmentId);
     onAssessmentDeleteOpen();
   };
   const {
@@ -44,6 +47,7 @@ const AssessmentTable: React.FC = () => {
       .updateAssessment({
         id: assessmentId,
         assessmentName: data.name,
+        createdUser: userInfo.id,
       })
       .then((res) => {
         if (res.data) {
