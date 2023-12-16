@@ -1,18 +1,19 @@
-import { JsonArray } from "@prisma/client/runtime/library";
-
-export interface RestCreateAward{
-    awardId: string;
-    awardName: string;
-    awardPicture : string;
-    assessment : Assessment[];
+export interface RestCreateAward {
+  name: string;
+  image: string;
+  createdUser: string;
 }
+ export interface RestGetAwardById{
+  id : string;
+ }
 
-export interface RestGetAward {
-    awardId: string;
+export interface RestUpdateAward {
+  id : string;
+  name?: string;
+  image?: string;
+  createdUser: string;
 }
-
-export interface Assessment {
-    assessmentName : string;
-    assessmantMin : number;
-    assessmentMax : number;
+export interface RestDeleteAward {
+  id : string;
+  createdUser: string;
 }
