@@ -1,8 +1,16 @@
 import { Body, Controller, Delete, Get, Path, Post, Put, Route, Tags } from 'tsoa';
-import { ResponseCreateGroup, ResponseGetAllGroup, ResponseGetGroup, ResponseUpdateGroup } from '../interfaces/group/response.interface';
-import { RestCreateGroup, RestDeleteGroup, RestUpdateGroup } from '../interfaces/group/rest.interface';
-import { GroupService } from '../services/GroupService';
-import { request } from 'express';
+import {
+  ResponseCreateGroup,
+  ResponseGetAllGroup,
+  ResponseGetGroup,
+  ResponseUpdateGroup,
+} from '../interfaces/group/response.interface';
+import {
+  RestCreateGroup,
+  RestDeleteGroup,
+  RestUpdateGroup,
+} from '../interfaces/group/rest.interface';
+import { GroupService } from '../services';
 
 @Route('/group')
 export class GroupController extends Controller {
@@ -10,11 +18,11 @@ export class GroupController extends Controller {
   @Tags('CreateGroup')
   public async createGroup(@Body() req: RestCreateGroup): Promise<ResponseCreateGroup> {
     const data = await new GroupService().createGroup(req);
+    this.setStatus(201);
     if (data.error) {
       this.setStatus(400);
       return data;
     }
-    this.setStatus(201);
     return data;
   }
 
@@ -22,11 +30,11 @@ export class GroupController extends Controller {
   @Tags('GetGroup')
   public async getGroup(@Path() groupId: string): Promise<ResponseGetGroup> {
     const data = await new GroupService().getGroup(groupId);
+    this.setStatus(200);
     if (data.error) {
       this.setStatus(400);
       return data;
     }
-    this.setStatus(200);
     return data;
   }
 
@@ -34,11 +42,11 @@ export class GroupController extends Controller {
   @Tags('GetAllGroups')
   public async getAllGroups(): Promise<ResponseGetAllGroup> {
     const data = await new GroupService().getAllGroups();
+    this.setStatus(200);
     if (data.error) {
       this.setStatus(400);
       return data;
     }
-    this.setStatus(200);
     return data;
   }
 
@@ -46,23 +54,23 @@ export class GroupController extends Controller {
   @Tags('UpdateGroup')
   public async updateGroup(@Body() req: RestUpdateGroup): Promise<ResponseUpdateGroup> {
     const data = await new GroupService().updateGroup(req);
+    this.setStatus(200);
     if (data.error) {
       this.setStatus(400);
       return data;
     }
-    this.setStatus(200);
     return data;
   }
 
   @Delete('/delete')
   @Tags('DeleteGroup')
-  public async deleteGroup(@Body() req: RestDeleteGroup){
+  public async deleteGroup(@Body() req: RestDeleteGroup) {
     const data = await new GroupService().deleteGroup(req);
+    this.setStatus(200);
     if (data.error) {
       this.setStatus(400);
       return data;
     }
-    this.setStatus(200);
     return data;
   }
 }

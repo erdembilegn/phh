@@ -1,7 +1,16 @@
-import { Body, Controller, Get, Post, Route, Tags, Path,  Put, Delete } from 'tsoa';
-import { ResponseCreateAward, ResponseGetAward, ResponseGetAwardById, ResponseUpdateAward } from '../interfaces/award/response.interface';
-import { RestCreateAward, RestDeleteAward, RestUpdateAward } from '../interfaces/award/rest.interface';
-import { AwardService } from '../services/AwardService';
+import { Body, Controller, Delete, Get, Path, Post, Put, Route, Tags } from 'tsoa';
+import {
+  ResponseCreateAward,
+  ResponseGetAward,
+  ResponseGetAwardById,
+  ResponseUpdateAward,
+} from '../interfaces/award/response.interface';
+import {
+  RestCreateAward,
+  RestDeleteAward,
+  RestUpdateAward,
+} from '../interfaces/award/rest.interface';
+import { AwardService } from '../services';
 
 @Route('/award')
 export class AwardController extends Controller {
@@ -55,7 +64,7 @@ export class AwardController extends Controller {
 
   @Delete('/delete')
   @Tags('DeleteAward')
-  public async deleteAward(@Body() req: RestDeleteAward){
+  public async deleteAward(@Body() req: RestDeleteAward) {
     const data = await new AwardService().deleteAward(req);
     if (data.error) {
       this.setStatus(400);

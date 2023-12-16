@@ -7,32 +7,26 @@ const prisma = new PrismaClient();
 export class GradeService {
   public async createGrade(req: RestCreateGrade): Promise<ResponseCreateGrade> {
     try {
-
-      let data = req.user.map(async (grade) => {
-        return await prisma.grade.create({
-          data: {
-            userId: grade.userId,
-            assessmentId: req.assessmentId,
-            gamificationId: req.assessmentId,
-            gradeNumber: grade.gradeNumber,
-            createdUser: req.createdUser,
-          }
-        })
-      })
-
-
-      const ids = await Promise.all(data.map((ids) => {
-        return ids.then((res) => {
-          return res.id;
-        });
-      }));
+      let createdIds = await Promise.all(
+        req.user.map(async (grade) => {
+          let createdGrade = await prisma.grade.create({
+            data: {
+              userId: grade.userId,
+              assessmentId: req.assessmentId,
+              gamificationId: req.assessmentId,
+              gradeNumber: grade.gradeNumber,
+              createdUser: req.createdUser,
+            },
+          });
+          return createdGrade.id;
+        }),
+      );
 
       return {
         data: {
-          id: ids
-        }
+          id: createdIds,
+        },
       };
-
     } catch (error) {
       return {
         error: {
